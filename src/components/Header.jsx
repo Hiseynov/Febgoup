@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 export default function header() {
   return (
@@ -7,13 +8,15 @@ export default function header() {
       <div className="Header">
         <div className="header-top">
           <div className="header-top-logo">
-            <Link to={"/"}>Logo</Link>
+            <Link to={"/"}>
+              <Logo></Logo>
+            </Link>
           </div>
           <div className="header-top-word">
             <ul>
-              <li className="Acount">
+              <Link to={"Login"} className="Acount">
                 My Account <i className="fa-solid fa-right-from-bracket"></i>
-              </li>
+              </Link>
               <li className="SifarisEt">SİFARİŞ ET</li>
             </ul>
           </div>

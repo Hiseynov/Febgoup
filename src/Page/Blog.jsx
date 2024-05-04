@@ -22,12 +22,7 @@ function DateGroup() {
               </div>
               <div className="Blog-container-right">
                 <p>
-                  Welcome to Kuyo Verpackungen, your competent partner
-                  forcontract filling, packaging, contract packaging and
-                  packaging. We offer a wide range of services including
-                  bottling of powders, creams, liquids, creams, granules and
-                  other free-flowing raw materials such as dietary supplements
-                  and spices. 
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel reiciendis libero id molestias aliquid minima, tempora repellendus tenetur nihil laborum at atque eligendi quos inventore quam illum. Architecto cum suscipit perspiciatis harum rerum culpa dolorem, beatae iste nobis ipsum velit sapiente commodi eaque aperiam ratione, alias libero incidunt, cumque est ipsa veniam? Ullam repellendus, cupiditate magni unde fuga recusandae corporis nisi deserunt aliquam illo, laborum dignissimos voluptates eligendi ea dolorum! Nesciunt tenetur facilis laborum temporibus ipsum, esse iusto odio vel!
                 </p>
               </div>
             </div>

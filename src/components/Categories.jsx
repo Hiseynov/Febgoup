@@ -1,11 +1,9 @@
 import React from 'react'
-import Categories from '../components/Categories'
-function Əlaqə() {
+
+function categories() {
   return (
-    <section id="contact">
-     <h3 className="contact-title">Find us on Google Maps</h3>
-      <div className="contact-wrapper">
-        {/* <div className="contact-items">
+   <>
+               <div className="contact-items">
           <div className="contact-item">
             <i class="fa-solid fa-phone"></i>
             <div className="contact-about">
@@ -35,17 +33,9 @@ function Əlaqə() {
             </div>
           </div>
 
-        </div> */}
-        <Categories></Categories>
-        <div className="contact-map-items">
-        
-          <div className="contact-map">
-          
-          </div>
         </div>
-      </div>
-    </section>
+   </>
   )
 }
 
-export default Əlaqə
+export default categories

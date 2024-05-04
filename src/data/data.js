@@ -165,3 +165,98 @@ We are also able to bottle sweets (e.g. gummy bears, Haribo, fruit gums, jelly b
 Our packaging solutions are as diverse as our customers. We offer sachets, four-edge seal bags, three-edge seal bags, tubular bags, flow packs, doypacks, stand-up pouches and sticks, all of which meet the highest standards of food safety and quality. Our packaging is also available in various sizes and formats to suit the specific requirements of our customers.`
     }
   ];
+
+export const mehsuls =[
+  {
+    img:"src/img/Aboutimg3.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg1.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg2.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg4.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  }
+
+];
+
+export const Mehsular =[
+  {
+    id:'1',
+    img:"src/img/product1.png"
+  },
+  {
+    id:'2',
+    img:"src/img/product2.png"
+  },
+  {
+    id:'3',
+    img:"src/img/product3.png"
+  },
+  {
+    id:'4',
+    img:"src/img/product4.png"
+  }
+];
+// export const Dizayn = [
+//   {
+//     id:'1',
+//     text:"Brandname"
+//   },
+//   {
+//     id:'2',
+//     text:"Logoname"
+//   },
+//   {
+//     id:'3',
+//     text:"titlename"
+//   },
+// ]
+export const Dizayn =[
+  {
+    id:'1',
+    img:"src/img/brand1.png"
+  },
+  {
+    id:'2',
+    img:"src/img/brand2.png"
+  },
+  {
+    id:'3',
+    img:"src/img/brand3.png"
+  }
+];

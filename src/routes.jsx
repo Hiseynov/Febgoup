@@ -5,6 +5,8 @@ import Məhsullar from "./Page/Məhsullar";
 import Əlaqə from "./Page/Əlaqə"
 import Şablon from "./Page/Şablon"
 import NewsBlock from "./Page/NewsBlock";
+import Login from "./Page/Login";
+import Register from "./Page/Register";
 
 export const routes = [
     {
@@ -34,5 +36,13 @@ export const routes = [
       {
         path:"Blog/:id",
         element:<NewsBlock></NewsBlock>
-      }
+      },
+      {
+        path:"Login",
+        element:<Login></Login>
+      },
+      {
+        path:"Register",
+        element:<Register></Register>
+      },
 ]

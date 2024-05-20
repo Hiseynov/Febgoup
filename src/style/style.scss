@@ -9,18 +9,20 @@
   border: none;
 }
 body {
-  background-color: #fcf5ff;
+  background: #f3e7f9;
 }
 .Header {
-  width: 90%;
+//  background-color: white;
+  .Header-container{
+     width: 90%;
   margin: 0 auto;
-  .header-top {
+      .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     .header-top-logo {
-      width: 150px;
+      width: 180px;
       height: 100px;
       a {
         font-size: 40px;
@@ -32,6 +34,7 @@ body {
       }
     }
     .header-top-word {
+      
       ul {
         display: flex;
         gap: 30px;
@@ -51,6 +54,7 @@ body {
   }
 
   .header-button {
+    margin-bottom: 60px;
     display: flex;
     align-items: center;
     height: 60px;
@@ -110,6 +114,8 @@ body {
       }
     }
   }
+  }
+
 }
 #HomePhoto {
   width: 90%;
@@ -613,13 +619,10 @@ body {
 
   h3 {
     font-size: 36px;
-    line-height: 43px;
-    // margin-bottom: 2.5rem;
-    //  padding-bottom: 2rem    ;
     display: flex;
     justify-content: space-evenly;
-    margin-left: 15rem;
-    margin-bottom: 0rem;
+    
+    margin-bottom: 40px;
   }
 
   .contact-wrapper {
@@ -631,9 +634,9 @@ body {
 
     .contact-map-items {
       .contact-map {
-        background: url("../img/2\ \(City\).png") center/cover;
-        width: 692px;
-        height: 374px;
+        // background: url("../img/2\ \(City\).png") center/cover;
+        width: 100%;
+        height: 100%;
       }
     }
   }

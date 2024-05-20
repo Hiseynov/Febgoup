@@ -40,7 +40,7 @@ function Əlaqə() {
         <div className="contact-map-items">
         
           <div className="contact-map">
-          
+          <img src="src\img\map.png" alt="" />
           </div>
         </div>
       </div>

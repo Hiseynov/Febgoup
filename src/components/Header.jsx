@@ -6,7 +6,8 @@ export default function header() {
   return (
     <>
       <div className="Header">
-        <div className="header-top">
+        <div className="Header-container">
+                  <div className="header-top">
           <div className="header-top-logo">
             <Link to={"/"}>
               <Logo></Logo>
@@ -38,6 +39,8 @@ export default function header() {
             </ul>
           </div>
         </div>
+        </div>
+
       </div>
     </>
   );

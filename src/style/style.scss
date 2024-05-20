@@ -9,7 +9,7 @@
   border: none;
 }
 body {
-  background: #f3e7f9;
+  background: #ffffff;
 }
 .Header {
 //  background-color: white;
@@ -60,12 +60,13 @@ body {
     height: 60px;
     gap: 60px;
     border-top: 0.8px solid #a39797;
+    justify-content: space-between;
     .header-button-category {
-      width: 100%;
+      
+      width: 80%;
       ul {
         display: flex;
         justify-content: space-between;
-        width: 80%;
         li {
           a {
             color: black;
@@ -96,26 +97,55 @@ body {
       }
     }
     .header-button-change {
-      ul {
+      // box-shadow: inset 1px 0px 8px 0px #7fc02f;
+      position: relative;
+      display: flex;
+      gap: 10px;
+      padding: 5px 10px;
+      background: white;
+      width: 70px;
+      cursor: pointer;
+      p{
         display: flex;
-        gap: 20px;
-        align-items: center;
+        gap: 5px;
+        i{
+          transition: .6s;
+        }
+      }
+      ul {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 19px;
+        z-index: 10000;
+        margin-top: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        // row-gap: 10px;
+        cursor: pointer;
         li {
+          // box-shadow: inset 1px 0px 8px 0px #7fc02f;
           display: flex;
-          gap: 5px;
-          align-items: center;
-          .fa-angle-down {
-            font-size: 11px;
-          }
-          .fa-magnifying-glass {
-            font-size: 15px;
-          }
+          gap: 10px;
+          color: rgb(0, 0, 0);
+          padding: 5px 10px;
+          text-align: center;
+          // .fa-angle-down {
+          //   font-size: 11px;
+          // }
+          // .fa-magnifying-glass {
+          //   font-size: 15px;
+          // }
         }
       }
     }
   }
   }
 
+}
+.rotate{
+  transform: rotate(180deg);
 }
 #HomePhoto {
   width: 90%;
@@ -1111,7 +1141,6 @@ body {
 
 .Sablon {
   margin-top: 50px;
-  background: #f3e7f9;
   padding: 25px 0;
   .Sablon-container {
     display: grid;

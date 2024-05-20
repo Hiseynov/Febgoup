@@ -1,8 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
 export default function header() {
+  const language = ["Az","Ru","Angl"]
+  const [lang,setlang] = useState('Az')
+  const [langac,setlangac] = useState(false)
+  const langcategories = language.filter(item=> item !=lang)
   return (
     <>
       <div className="Header">
@@ -33,10 +38,21 @@ export default function header() {
             </ul>
           </div>
           <div className="header-button-change">
-            <ul>
+            {/* <ul>
               <li><i className="fa-solid fa-magnifying-glass"></i></li>
               <li>Az <i className="fa-solid fa-angle-down"></i></li>
-            </ul>
+            </ul> */}
+            <p  onClick={() => setlangac(!langac)}>{lang} <i  className={`fa-solid fa-angle-down ${langac? 'rotate':''}`}></i></p>
+            {langac && (
+                 <ul>
+                              {
+                                langcategories.map((item)=>(
+                                  <li onClick={()=>(setlang(item),setlangac(false))}>{item}</li>
+                                ))
+                              }
+                </ul>
+            )}
+                         
           </div>
         </div>
         </div>

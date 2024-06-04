@@ -176,17 +176,19 @@ export const mehsuls =[
     Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Xalis:"3,6q",
+    id:'1',
     Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
   },
   {
     img:"src/img/Aboutimg1.jpg",
     name:"LOGOLU SEKER CUBUGLARI",
     title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
-    Mehsul:"Seker",
-    Stikformati:"100x40 mm",
+    Mehsul:"Sekerler",
+    Stikformati:"120x90 mm",
     Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Xalis:"3,6q",
+    id:'2',
     Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
   },
   {
@@ -198,6 +200,7 @@ export const mehsuls =[
     Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Xalis:"3,6q",
+    id:'3',
     Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
   },
   {
@@ -209,8 +212,105 @@ export const mehsuls =[
     Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
     Xalis:"3,6q",
+    id:'4',
     Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
-  }
+  },
+  {
+    img:"src/img/Aboutimg3.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'1',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg1.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'2',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg2.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'3',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg4.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'4',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg3.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'1',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg1.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'2',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg2.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'3',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
+  {
+    img:"src/img/Aboutimg4.jpg",
+    name:"LOGOLU SEKER CUBUGLARI",
+    title:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem laborum corrupti tempora, illum deleniti error? Incidunt culpa facilis repellat quo possimus ad accusamus labore delectus,",
+    Mehsul:"Seker",
+    Stikformati:"100x40 mm",
+    Tezyig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Icindeki:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ",
+    Xalis:"3,6q",
+    id:'4',
+    Davamlilig:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem "
+  },
 
 ];
 

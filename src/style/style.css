@@ -767,11 +767,6 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-@media screen and (max-width: 891px) {
-  #MehsulCarusel .MehsulCarusel .swiper-slide {
-    width: 200px !important;
-  }
-}
 .MehsulCarusel-word {
   text-align: center;
   margin: 50px 0;
@@ -804,12 +799,12 @@ body {
 }
 @media screen and (max-width: 891px) {
   .MehsulCarusel-item .MehsulCarusel-item-img {
-    height: 0;
+    height: auto;
   }
 }
 @media screen and (max-width: 891px) {
   .MehsulCarusel-item .MehsulCarusel-item-img {
-    height: 110px;
+    height: 160px;
   }
 }
 .MehsulCarusel-item .MehsulCarusel-item-img img {

@@ -19,10 +19,10 @@ export default function MehsulCarusel() {
         </div>
         <div className="MehsulCarusel">
           <Swiper
-            slidesPerView={3}
+            slidesPerView={2}
             spaceBetween={30}
             autoplay={{
-              delay: 1000,
+              delay: 100000000000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}

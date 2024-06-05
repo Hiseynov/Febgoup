@@ -771,7 +771,7 @@ display: none;
   .MehsulCarusel{
     .swiper-slide{
       @include mobile (){
-        width: 200px !important;
+        // width: 220px !important;
 
       }
     }
@@ -808,10 +808,10 @@ display: none;
     background-color: #FAFAFA;
     height: 200px;
     @include mobile(){
-      height: 0;
+      height: auto;
     }
     @include mobile (){
-      height: 110px;
+      height: 160px;
     }
     img{
       height: 100%;

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { mehsuls } from '../data/data'
 
 function Məhsullar() {
   const [firstData,setfirstData] = useState(mehsuls[0])
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [firstData]);
   return (
     <>
       <div className="Mehsul">

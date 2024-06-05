@@ -21,7 +21,7 @@ export default function App() {
         spaceBetween={30}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 250000000,
           disableOnInteraction: false,
         }}
         pagination={{

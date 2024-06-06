@@ -43,6 +43,17 @@ function Home() {
   return (
     <>
     <Carusel></Carusel>
+    <section id="HomeLogo">
+      <div className="HomeLogo">
+        <ul className='HomeLogo-categories'>
+          <li className='HomeLogo-category'>Logo</li>
+          <li className='HomeLogo-category'>Logo</li>
+          <li className='HomeLogo-category'>Logo</li>
+          <li className='HomeLogo-category'>Logo</li>
+          <li className='HomeLogo-category'>Logo</li>
+        </ul>
+      </div>
+    </section>
     <MehsulCarusel></MehsulCarusel>
       <section id='Started'>
         <div className="Started-container">

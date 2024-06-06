@@ -43,7 +43,9 @@ export default function MehsulCarusel() {
             <div className="MehsulCarusel-container">
               {mehsuls.map((item) => (
                 <>
-                  <SwiperSlide key={item.id}>
+                {
+                  item.name && (
+                                      <SwiperSlide key={item.id}>
                     <div className="MehsulCarusel-item">
                       <div className="MehsulCarusel-item-img">
                         <img src={item.img} alt="Mehsul" />
@@ -53,6 +55,9 @@ export default function MehsulCarusel() {
                       </div>
                     </div>
                   </SwiperSlide>
+                  )
+                }
+
                 </>
               ))}
             </div>

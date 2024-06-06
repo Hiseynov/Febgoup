@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,6 +11,18 @@ import { Autoplay } from "swiper/modules";
 import { mehsuls } from "../data/data";
 
 export default function MehsulCarusel() {
+  const [slidesPerView, setSlidesPerView] = useState(window.innerWidth < 891 ? 2 : 3);
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth < 800 ? 2 : 3);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); 
   return (
     <>
       <section id="MehsulCarusel">
@@ -19,7 +31,7 @@ export default function MehsulCarusel() {
         </div>
         <div className="MehsulCarusel">
           <Swiper
-            slidesPerView={2}
+            slidesPerView={slidesPerView}
             spaceBetween={30}
             autoplay={{
               delay: 1000,

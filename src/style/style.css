@@ -100,6 +100,7 @@ body {
 
 .Header-language {
   position: relative;
+  cursor: pointer;
 }
 .Header-language p {
   cursor: pointer;
@@ -136,7 +137,7 @@ body {
 }
 
 #Started {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 #Started .Started-container {
   width: 90%;
@@ -172,7 +173,7 @@ body {
 }
 #Started .Started-container .Started-category ul li .Started-categories-icon i {
   color: #000000;
-  font-size: 30px;
+  font-size: 45px;
 }
 #Started .Started-container .Started-category ul li .Started-categories-word {
   display: flex;
@@ -180,12 +181,13 @@ body {
   row-gap: 20px;
 }
 #Started .Started-container .Started-category ul li .Started-categories-word h3 {
-  font-size: 20px;
+  font-size: 25px;
 }
 #Started .Started-container .Started-category ul li .Started-categories-word p {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 22px;
   opacity: 0.7;
 }
 
@@ -293,6 +295,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   -moz-column-gap: 40px;
        column-gap: 40px;
+  align-items: center;
 }
 @media screen and (max-width: 891px) {
   .Mehsul .Mehsul-container .MehsulFirst {
@@ -319,6 +322,7 @@ body {
   width: 200px;
   height: 40px;
   border-radius: 25px;
+  margin: 10px 0;
 }
 
 .Mehsulİtems {
@@ -352,7 +356,7 @@ body {
   row-gap: 20px;
   cursor: pointer;
   border-radius: 10px;
-  background-color: #ebfaef;
+  background-color: #FAFAFA;
 }
 .Mehsulİtems .MehsulItem-container .MehsulItem .MehsulItem-img {
   overflow: hidden;
@@ -595,6 +599,7 @@ body {
   box-shadow: 1px 0px 8px -3px #629c4d;
   padding-bottom: 20px;
   padding-top: 20px;
+  background-color: #FAFAFA;
 }
 #Carusel .Carusel .Carusel-container .Carusel-container-item {
   display: grid;
@@ -780,12 +785,14 @@ body {
   padding: 20px;
   display: grid;
   row-gap: 10px;
-  height: 300px;
 }
 @media screen and (max-width: 891px) {
   .MehsulCarusel-item {
     height: auto;
   }
+}
+.MehsulCarusel-item strong {
+  font-size: 22px;
 }
 @media screen and (max-width: 891px) {
   .MehsulCarusel-item strong {
@@ -795,7 +802,6 @@ body {
 .MehsulCarusel-item .MehsulCarusel-item-img {
   padding: 10px;
   background-color: #FAFAFA;
-  height: 200px;
 }
 @media screen and (max-width: 891px) {
   .MehsulCarusel-item .MehsulCarusel-item-img {

@@ -21,7 +21,7 @@ export default function App() {
         spaceBetween={30}
         loop={true}
         autoplay={{
-          delay: 250000000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -35,48 +35,121 @@ export default function App() {
         <SwiperSlide>
           <div className="Carusel-container-item">
             <div className="Carusel-container-word">
-              <h3>Logolu Seker cubuglari</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, animi.</p>
+            
+
+
+              <h3>LOGOLU ŞƏKƏR Çubuqları</h3>
+              <p>Loqolu şəkər çubuqları yaddaşınızda qalacaq! Siz öz istəyinizə uyğun olaraq şəkər qozalarını çap etdirə bilərsiniz.</p>
               <button>Sifaris et</button>
             </div>
             <div className="Carusel-container-photo">
-              <img src="https://kuyo.de/wp-content/uploads/2019/02/zuckersticks_1-min.png" alt="" />
+              <img src="src/img/Group 22.png" alt="" />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="Carusel-container-item">
             <div className="Carusel-container-word">
-              <h3>Logolu Seker cubuglari</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, animi.</p>
+            
+
+         
+
+
+              <h3>LOGOLU ÇAPLI ŞƏKƏR PAKETLERİ</h3>
+              <p>Müştərilərinizin çayını və ya qəhvəsini şirinləşdirin və eyni zamanda şəkər paketlərini reklam mesajı kimi istifadə edin.</p>
               <button>Sifaris et</button>
             </div>
             <div className="Carusel-container-photo">
-              <img src="https://kuyo.de/wp-content/uploads/2019/02/zuckersticks_1-min.png" alt="" />
+              <img src="src/img/Group 23.png" alt="" />
+              {/* <img src="src/img/image 9.png" alt="" /> */}
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="Carusel-container-item">
             <div className="Carusel-container-word">
-              <h3>Logolu Seker cubuglari</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, animi.</p>
+            
+
+
+
+              <h3>DUZ / İSTİOT / BİBƏR</h3>
+              <p>Duz, istiot və çili paketlərimizlə reklam materiallarınızı verə bilərsiniz doğru ədviyyat.</p>
               <button>Sifaris et</button>
             </div>
             <div className="Carusel-container-photo">
-              <img src="https://kuyo.de/wp-content/uploads/2019/02/zuckersticks_1-min.png" alt="" />
+              <img src="src/img/Group 24.png" alt="" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="Carusel-container-item">
+            <div className="Carusel-container-word">
+            
+           
+
+
+
+              <h3>LOGOLU SƏHƏT DƏSMƏLƏRİ</h3>
+              <p>Həssas dərilərdə belə gigiyenik cəhətdən təmiz və yumşaqdır</p>
+              <button>Sifaris et</button>
+            </div>
+            <div className="Carusel-container-photo">
+              <img src="src/img/Group 25.png" alt="" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="Carusel-container-item">
+            <div className="Carusel-container-word">
+            
+
+            
+
+
+              <h3>TƏMİZLİK PARÇALARI</h3>
+              <p>Tətbiq sahəsi: Sililə bilən səthləri və tibbi inventarları (akril şüşədən başqa) dezinfeksiya etmək üçün istifadəyə hazır məhlul.</p>
+              <button>Sifaris et</button>
+            </div>
+            <div className="Carusel-container-photo">
+              <img src="src/img/Group 26.png" alt="" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="Carusel-container-item">
+            <div className="Carusel-container-word">
+            
+            
+
+
+
+              <h3>POPCORN</h3>
+              <p>Rahat ev kinoteatrı axşamı üçün mükəmməl qəlyanaltı xırıltı yaradır, eşidə biləcəyiniz və dadına biləcəyiniz həyəcanverici atmosfer</p>
+              <button>Sifaris et</button>
+            </div>
+            <div className="Carusel-container-photo">
+              <img src="src/img/Group 27.png" alt="" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="Carusel-container-item">
+            <div className="Carusel-container-word">
+            
+
+            
+
+              <h3>KEÇUP / MAYONEZ</h3>
+              <p>Burger, kartof qızartması və barbekü üçün və ya yeməkləri zərifləşdirmək üçün dadlı yoldaş.</p>
+              <button>Sifaris et</button>
+            </div>
+            <div className="Carusel-container-photo">
+              <img src="src/img/Group 28.png" alt="" />
             </div>
           </div>
         </SwiperSlide>
 
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
+
       </Swiper>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Carusel from '../components/Carusel'
-import { dates, mehsuls } from '../data/data'
+import { mehsuls } from '../data/data'
 import Categories from '../components/Categories'
 import MehsulCarusel from '../components/MehsulCarusel'
 function Home() {
@@ -56,35 +56,43 @@ function Home() {
                 <i className="fa-regular fa-lightbulb"></i>
                 </div>
                 <div className="Started-categories-word">
-                  <h3>Innovativ Dizayn</h3>
-                  <p>Browse our wide selection of packaging products and find the perfect fit for your needs.</p>
+
+                  <h3>İnnovativ Dizayn</h3>
+                  <p>Qablaşdırmanızı fərqləndirən fərdi həllər.</p>
                 </div>
               </li>
+
+
               <li>
                 <div className="Started-categories-icon">
                 <i className="fa-solid fa-oil-well"></i>
                 </div>
                 <div className="Started-categories-word">
                   <h3>Çox yönlü istehsal</h3>
-                  <p>Make your packaging unique by uploading your logo and customizing the design to match your brand.</p>
+                  <p>Bütün qablaşdırma ehtiyacları üçün qabaqcıl avadanlıq</p>
                 </div>
               </li>
               <li>
+              
+
+
                 <div className="Started-categories-icon">
                 <i className="fa-solid fa-scale-balanced"></i>
                 </div>
                 <div className="Started-categories-word">
-                  <h3>Place your order</h3>
-                  <p>Review your custom packaging details and place your order with confidence.</p>
+                  <h3>Keyfiyyət Təminatı.</h3>
+                  <p>Hər mərhələdə keyfiyyətə və dürüstlüyə sadiqlik.</p>
                 </div>
               </li>
+              
+
               <li>
                 <div className="Started-categories-icon">
                 <i className="fa-solid fa-truck-ramp-box"></i>
                 </div>
                 <div className="Started-categories-word">
-                  <h3>Place your order</h3>
-                  <p>Review your custom packaging details and place your order with confidence.</p>
+                  <h3>Etibarlı Çatdırılma</h3>
+                  <p>Diqqətli personal tərəfindən təhlükəsiz, vaxtında çatdırılma.</p>
                 </div>
               </li>
             </ul>
@@ -94,12 +102,13 @@ function Home() {
 <section id='Hakimizda'>
 <div className="Hakimizda">
   <div className="Hakimizda-container">
+  
     <div className="Hakimizda-top">
-    <h3>Fabrikimiz haqqinda</h3>
+    <h3>Fabrikimiz haqqında</h3>
     </div>
     <div className="Hakimizda-button">
       <div className="Hakimizda-button-word">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam esse vero accusamus minima nulla expedita, corporis modi quia nihil. Eveniet quaerat numquam quo cum praesentium excepturi deserunt vel. Tempore, ullam natus dolorum at dolor repellendus! Ipsum odit tenetur, vero dolores quisquam nulla ex explicabo qui exercitationem nemo harum obcaecati accusamus?</p>
+        <p>Fabrikimizin xüsusi komandaya və ən müasir avadanlıqlara malik dinamik şirkətdir. Biz geniş çeşiddə karton və qablaşdırma məhsullarının istehsalında ixtisaslaşmışıq. Qısa müddət ərzində biz müştərilərimiz arasında əla reputasiya qazandıq. İstehsal prosesinin hər mərhələsində dürüstlük və keyfiyyətə sadiqliyimiz güclü imic və reputasiyamızı qoruyub saxlamağımızı təmin edir.</p>
       </div>
       <div className="Hakimizda-button-photo">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnx6cU4TZ8QJiJhDWcefhDtuw4We5_upqXww&s" alt="" />

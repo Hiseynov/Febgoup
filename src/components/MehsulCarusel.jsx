@@ -22,7 +22,7 @@ export default function MehsulCarusel() {
             slidesPerView={2}
             spaceBetween={30}
             autoplay={{
-              delay: 100000000000,
+              delay: 1000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}

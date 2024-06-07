@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Dizayn,Mehsular } from '../data/data'
 const LogoMaker = () => {
     const [selectedProduct, setSelectedProduct] = useState(1);
@@ -59,6 +60,11 @@ const LogoMaker = () => {
                 </div>
             )}
         </div> */}
+                      <Helmet>
+        <title>Paketləmə ilə öz şəxsiyyətinizi yaradın: keyfiyyət və üslub!</title>
+        <meta name="description" content="Şəxsiyyətinizi yansıdın. Bizim dizayn ekspertlərimizlə birgə, sizi təmsil edən unikal və diqqət çəkici bir ləqəb yaradırıq. Sizin brendiniz bizim mükəmməl dizayn və keyfiyyət standartlarımızla əhatə olunacaq." />
+        {/* Другие метатеги */}
+      </Helmet>
         <div className="Sablon">
           <div className="Sablon-container">
             <div className="Sablon-change">

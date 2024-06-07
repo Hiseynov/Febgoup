@@ -5,6 +5,7 @@ import Carusel from '../components/Carusel'
 import { mehsuls } from '../data/data'
 import Categories from '../components/Categories'
 import MehsulCarusel from '../components/MehsulCarusel'
+import { Helmet } from 'react-helmet'
 function Home() {
   // const [PropsData,setPropsData] = useState("")
   // const [PostData,setPostData] = useState(false)
@@ -42,6 +43,11 @@ function Home() {
   };
   return (
     <>
+          <Helmet>
+        <title>Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!</title>
+        <meta name="description" content="Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir." />
+        {/* Другие метатеги */}
+      </Helmet>
     <Carusel></Carusel>
     <section id="HomeLogo">
       <div className="HomeLogo">

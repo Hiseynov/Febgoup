@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { mehsuls } from '../data/data'
 
 function Məhsullar() {
@@ -9,6 +10,11 @@ function Məhsullar() {
   }, [firstData]);
   return (
     <>
+              <Helmet>
+        <title>Ən yaxşı paketləmə həlləri: keyfiyyəti seçin!</title>
+        <meta name="description" content="Bizim məhsullarımız sizi memnun etmək üçün yaradılmışdır. Hər bir detay, ən yüksək keyfiyyət və innovativ dizayn ilə işlənmişdir. Bizimlə işləməklə məhsullarınızı unikal və fərqli bir şəkildə təcrübə etməyə başlayacaqsınız." />
+        {/* Другие метатеги */}
+      </Helmet>
       <div className="Mehsul">
         <div className="Mehsul-container">  
         {

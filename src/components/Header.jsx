@@ -39,6 +39,7 @@ export default function header() {
               <LinkRouter to={"/"}>
                 <Logo></Logo>
               </LinkRouter>
+
             </div>
             <div className="Header-container-center">
               <LinksCategory></LinksCategory>

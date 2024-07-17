@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Logoo from "../img/Logo.png";
 function Logo() {
   return (
    <>
-      <img src="src\img\Logo.png"/>
+      <img src={Logoo}/>
    </>
   )
 }

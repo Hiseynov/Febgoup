@@ -4,3 +4,8 @@
         @content
     }
 };
+@mixin ipad () {
+    @media screen and (max-width: $ipad) {
+        @content
+    }
+};

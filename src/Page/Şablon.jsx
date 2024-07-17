@@ -1,23 +1,52 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Dizayn,Mehsular } from '../data/data'
+// import { Dizayn,Mehsular } from '../data/data'
+import product1 from "../img/product1.png";
+import product2 from "../img/product2.png";
+import product3 from "../img/product3.png";
+import product4 from "../img/product4.png";
+import brand1 from "../img/brand1.png";
+import brand2 from "../img/brand2.png";
+import brand3 from "../img/brand3.png";
 const LogoMaker = () => {
     const [selectedProduct, setSelectedProduct] = useState(1);
     const [selectedDesign, setSelectedDesign] = useState(1);
     const [selecthis,setselecthis] = useState(1)
 
-    // const products = [
-    //     { id: 1, name: 'Продукт 1' },
-    //     { id: 2, name: 'Продукт 2' },
-    //     { id: 3, name: 'Продукт 3' },
-    // ];
+    const Mehsular =[
+      {
+        id:1,
+        img:product1
+      },
+      {
+        id:2,
+        img:product2
+      },
+      {
+        id:3,
+        img:product3
+      },
+      {
+        id:4,
+        img:product4
+      },
 
-    // const designs = [
-    //     { id: 1, name: 'Дизайн 1' },
-    //     { id: 2, name: 'Дизайн 2' },
-    //     { id: 3, name: 'Дизайн 3' },
-    // ];
-
+    ];
+    
+    const Dizayn =[
+      {
+        id:1,
+        img:brand1
+      },
+      {
+        id:2,
+        img:brand2
+      },
+      {
+        id:3,
+        img:brand3
+      },
+    ];
     const handleProductSelect = (productId) => {
         setSelectedProduct(productId);
         // setSelectedDesign(null); // Сбросить выбранный дизайн при выборе нового продукта
@@ -38,31 +67,15 @@ const LogoMaker = () => {
 
     return (
       <>
-              {/* <div>
-            <h1>Создание логотипа</h1>
-            <div>
-                <h3>Выберите продукт:</h3>
-                {Mehsular.map(product => (
-                    <button key={product.id} onClick={() => handleProductSelect(product.id)}>
-                       <img src={product.img} alt="" />
-                    </button>
-                ))}
-            </div>
-            {selectedProduct && (
-                <div>
-                    <h3>Выберите дизайн:</h3>
-                    {Dizayn.map(design => (
-                        <button key={design.id} onClick={() => handleDesignSelect(design.id)}>
-                           {design.text}
-                        </button>
-                    ))}
-                    <button onClick={handleDownload}>Скачать логотип</button>
-                </div>
-            )}
-        </div> */}
                       <Helmet>
-        <title>Paketləmə ilə öz şəxsiyyətinizi yaradın: keyfiyyət və üslub!</title>
-        <meta name="description" content="Şəxsiyyətinizi yansıdın. Bizim dizayn ekspertlərimizlə birgə, sizi təmsil edən unikal və diqqət çəkici bir ləqəb yaradırıq. Sizin brendiniz bizim mükəmməl dizayn və keyfiyyət standartlarımızla əhatə olunacaq." />
+        <title>'Feb Group' - Paketləmə ilə öz şəxsiyyətinizi yaradın: keyfiyyət və üslub!</title>
+        <meta name="description" content="'Feb Group' - Şəxsiyyətinizi yansıdın. Bizim dizayn ekspertlərimizlə birgə, sizi təmsil edən unikal və diqqət çəkici bir ləqəb yaradırıq. Sizin brendiniz bizim mükəmməl dizayn və keyfiyyət standartlarımızla əhatə olunacaq." />
+        <meta property="og:title" content="'Feb Group' - Paketləmə ilə öz şəxsiyyətinizi yaradın: keyfiyyət və üslub!"/>
+        <meta property="og:description" content="'Feb Group' - Şəxsiyyətinizi yansıdın. Bizim dizayn ekspertlərimizlə birgə, sizi təmsil edən unikal və diqqət çəkici bir ləqəb yaradırıq. Sizin brendiniz bizim mükəmməl dizayn və keyfiyyət standartlarımızla əhatə olunacaq."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="'Feb Group' - Paketləmə ilə öz şəxsiyyətinizi yaradın: keyfiyyət və üslub!"/>
+        <meta name="twitter:description" content="'Feb Group' - Şəxsiyyətinizi yansıdın. Bizim dizayn ekspertlərimizlə birgə, sizi təmsil edən unikal və diqqət çəkici bir ləqəb yaradırıq. Sizin brendiniz bizim mükəmməl dizayn və keyfiyyət standartlarımızla əhatə olunacaq."/>
         {/* Другие метатеги */}
       </Helmet>
         <div className="Sablon">

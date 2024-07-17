@@ -1,12 +1,78 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Carusel from '../components/Carusel'
-import { mehsuls } from '../data/data'
 import Categories from '../components/Categories'
 import MehsulCarusel from '../components/MehsulCarusel'
+import Group_29 from "../img/Group_29.png";
+import Group_30 from "../img/Group_30.png";
+import Group_31 from "../img/Group_31.png";
+import Group_32 from "../img/Group_32.png";
+import image_15 from "../img/image_15.png";
+import image_16 from "../img/image_16.png";
+import image_17 from "../img/image_17.png";
+import image_18 from "../img/image_18.png";
+import image_19 from "../img/image_19.png";
+import image_20 from "../img/image_20.png";
+import istehsal from "../img/istehsal.png";
+import Temir from "../img/Temir.jpeg";
+import cadtirmaIcon from "../img/cadtirmaIcon.png";
+import inovativIcon from "../img/inovativIcon.png";
+import TeminatIcon from "../img/TeminatIcon.png";
 import { Helmet } from 'react-helmet'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay } from "swiper/modules";
 function Home() {
+  const dataLogo = [
+    {
+      url:Group_29,
+    },
+    {
+      url:Group_30,
+    },
+    {
+      url:Group_31,
+    },
+    {
+      url:Group_32,
+    },
+    {
+      url:image_15,
+    },
+    {
+      url:image_16,
+    },
+    {
+      url:image_17,
+    },
+    {
+      url:image_18,
+    },
+    {
+      url:image_19,
+    },
+    {
+      url:image_20,
+    },
+   
+  ]
+  const [slidesPerView, setSlidesPerView] = useState(window.innerWidth < 891 ? 1 : 4);
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth < 800 ? 1 : 3);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); 
   // const [PropsData,setPropsData] = useState("")
   // const [PostData,setPostData] = useState(false)
   const [isFocusedUser, setIsFocusedUser] = useState(false);
@@ -44,22 +110,18 @@ function Home() {
   return (
     <>
           <Helmet>
-        <title>Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!</title>
-        <meta name="description" content="Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir." />
+        <title>'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!</title>
+        <meta name="description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir." />
+        <meta property="og:title" content="'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!"/>
+        <meta property="og:description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!"/>
+        <meta name="twitter:description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir."/>
         {/* Другие метатеги */}
       </Helmet>
     <Carusel></Carusel>
-    <section id="HomeLogo">
-      <div className="HomeLogo">
-        <ul className='HomeLogo-categories'>
-          <li className='HomeLogo-category'>Logo</li>
-          <li className='HomeLogo-category'>Logo</li>
-          <li className='HomeLogo-category'>Logo</li>
-          <li className='HomeLogo-category'>Logo</li>
-          <li className='HomeLogo-category'>Logo</li>
-        </ul>
-      </div>
-    </section>
+
     <MehsulCarusel></MehsulCarusel>
       <section id='Started'>
         <div className="Started-container">
@@ -70,7 +132,7 @@ function Home() {
             <ul>
               <li>
                 <div className="Started-categories-icon">
-                <i className="fa-regular fa-lightbulb"></i>
+                <img src={inovativIcon} alt="İnnovativ iconu" />
                 </div>
                 <div className="Started-categories-word">
 
@@ -82,7 +144,7 @@ function Home() {
 
               <li>
                 <div className="Started-categories-icon">
-                <i className="fa-solid fa-oil-well"></i>
+                <img src={Temir} alt="istehsal icon" />
                 </div>
                 <div className="Started-categories-word">
                   <h3>Çox yönlü istehsal</h3>
@@ -94,7 +156,7 @@ function Home() {
 
 
                 <div className="Started-categories-icon">
-                <i className="fa-solid fa-scale-balanced"></i>
+                <img src={TeminatIcon} alt="Keyfiyyət Təminatı iconu" />
                 </div>
                 <div className="Started-categories-word">
                   <h3>Keyfiyyət Təminatı.</h3>
@@ -105,7 +167,7 @@ function Home() {
 
               <li>
                 <div className="Started-categories-icon">
-                <i className="fa-solid fa-truck-ramp-box"></i>
+                <img src={cadtirmaIcon} alt="Etibarlı Çatdırılma iconu" />
                 </div>
                 <div className="Started-categories-word">
                   <h3>Etibarlı Çatdırılma</h3>
@@ -134,6 +196,44 @@ function Home() {
   </div>
 </div>
 </section>
+<section id="HomeLogo">
+      <section className="HomeLogo">
+        <div className="HomeLogo-logo">
+          <h3>Referanslarimiz</h3>
+        </div>
+        <ul className='HomeLogo-categories'>
+          <div className="HomeLogo-category">
+                                <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
+            {
+              dataLogo.map((item,id)=>(
+                <SwiperSlide key={id}>
+                    <div className="HomeLogo-item">
+                      <div className="HomeLogo-item-img">
+                        <img src={item.url} alt="Logo" />
+                      </div>
+                    
+                    </div>
+                  </SwiperSlide>
+              ))
+            }
+              
+
+
+          </Swiper>
+          </div>
+
+        </ul>
+      </section>
+    </section>
     <section id="contact">
       <div className="contact">
               <div className="elage">
@@ -176,8 +276,8 @@ function Home() {
         <div className="contact-map-items">
         
           <div className="contact-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.151245860889!2d49.8676024!3d40.3833404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d1a528d7063%3A0x44cfa147f2b3ed7e!2s13a%20Xocal%C4%B1%20prospekti%2C%20Bak%C4%B1!5e0!3m2!1sru!2saz!4v1717523229586!5m2!1sru!2saz"
-           width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+           <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3038.445201690104!2d49.898656976010116!3d40.398987171442386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDIzJzU2LjQiTiA0OcKwNTQnMDQuNCJF!5e0!3m2!1sru!2saz!4v1719489019410!5m2!1sru!2saz" width="600" height="450" loading="lazy"></iframe>
           </div>
         </div>
       </div>

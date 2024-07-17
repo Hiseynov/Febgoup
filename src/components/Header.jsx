@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Logo from "./Logo";
 import { Link as LinkScrool, scroller } from "react-scroll";
@@ -30,9 +30,63 @@ export default function header() {
       </a>
     );
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const verticalScroll = window.scrollY;
+      const sticky = document.querySelector(".Header");
+
+      if (verticalScroll > 100) {
+        sticky.classList.add("is-sticky");
+      } else {
+        sticky.classList.remove("is-sticky");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const verticalScroll = window.scrollY;
+      const sticky = document.querySelector(".headerMobile");
+
+      if (verticalScroll > 100) {
+        sticky.classList.add("is-sticky");
+      } else {
+        sticky.classList.remove("is-sticky");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <header id="Header">
+        <nav className="HeaderTop">
+          <div className="HeaderTop-container">
+          <div className="HeaderTop-container-left">
+            <h1>Feb Group Azerbaijan - Keyfiyyətin təmsilçisi</h1>
+          </div>
+          <div className="HeaderTop-container-right">
+            <ul className="HeaderTop-elage">
+              <li><span><i className="fa-solid fa-phone"></i></span><a href="tel:+994552778701" title='telefonla əlaqə:'>+994 (55) 277 87 01</a></li>
+              <li><span><i className="fa-regular fa-envelope"></i></span> <a href="mailto:info@febgroup.az" target='_blank' title='info@febgroup.az'>info@febgroup.az</a></li>
+            </ul>
+            <ul className="HeaderTop-social">
+              <li><a href=""> <i className='fa-brands fa-instagram'></i></a></li>
+              <li><a href=""> <i className='fa-brands fa-facebook-f'></i></a></li>
+              <li><a href=""><i className="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+          </div>
+        </nav>
         <nav className="Header">
           <nav className="Header-container">
             <div className="Header-container-left">
@@ -46,7 +100,7 @@ export default function header() {
             </div>
             <div className="Header-container-right">
               <div className="Header-whatsap">
-                <a href="https://wa.me/994500000000">
+                <a href="https://wa.me/994552778701" target='_blank'>
                   <i className="fa fa-whatsapp"></i>
                 </a>
               </div>
@@ -61,8 +115,8 @@ export default function header() {
                 </p>
                 {langac && (
                   <ul>
-                    {langcategories.map((item) => (
-                      <li onClick={() => (setlang(item), setlangac(false))}>
+                    {langcategories.map((item,id) => (
+                      <li key={id} onClick={() => (setlang(item), setlangac(false))}>
                         {item}
                       </li>
                     ))}
@@ -88,9 +142,19 @@ export default function header() {
           </nav>
         </nav>
       </header>
-      <div id="headerMobile">
-        <div className="headerMobile">
-          <div className="headerMobile-logo">
+      <header id="headerMobile">
+      <nav className="HeaderTopMobile">
+          <div className="HeaderTopMobile-container">
+            <ul>
+              <li><a href=""> <i className='fa-brands fa-instagram'></i></a></li>
+              <li><a href=""> <i className='fa-brands fa-facebook-f'></i></a></li>
+              <li><a href=""><i className="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+        <nav className="headerMobile">
+          <div className="headerMobile-container">
+                      <div className="headerMobile-logo">
             <LinkRouter to={"/"}>
               <Logo></Logo>
             </LinkRouter>
@@ -132,12 +196,14 @@ export default function header() {
                 </div>
               </div>
               <div className="MenuText-button">
-                <LinksCategory></LinksCategory>
+                <LinksCategory setactiveBasket={setactiveBasket}></LinksCategory>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
+
+        </nav>
+      </header>
     </>
   );
 }

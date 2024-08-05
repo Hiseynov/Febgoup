@@ -1,7 +1,9 @@
 import React from "react";
 import { Link as LinkRouter, useNavigate } from "react-router-dom";
-import { Link as LinkScrool, scroller } from "react-scroll";
-function LinksCategory({setactiveBasket}) {
+import { Link as LinkScroll, scroller } from "react-scroll";
+import { useTranslation } from "react-i18next";
+
+function LinksCategory({ setactiveBasket }) {
   const ScrollToSection = ({ to, children }) => {
     const navigate = useNavigate();
 
@@ -12,8 +14,7 @@ function LinksCategory({setactiveBasket}) {
           duration: 500,
           delay: 0,
           smooth: "easeInOutQuart",
-          offset: -200
-          
+          offset: -200,
         });
       }, 100); // Задержка, чтобы дать времени для перехода
     };
@@ -24,37 +25,40 @@ function LinksCategory({setactiveBasket}) {
       </a>
     );
   };
+
+  const { t } = useTranslation();
+
   return (
     <>
       <ul>
         <li>
-          <ScrollToSection 
-            // activeClass='active'
-            to="Hakimizda"
-           
-            // spy = {true}
-            // smooth={true}
-            // duration = {500}
-          >
-            <span onClick ={()=>setactiveBasket(false)}> Haqqımızda</span>
-           
+          <ScrollToSection to="Hakimizda">
+            <span onClick={() => setactiveBasket(false)}>{t("haqqimizda")}</span>
           </ScrollToSection>
         </li>
         <li>
-          <LinkRouter to={"Məhsullar"}  onClick ={()=>setactiveBasket(false)}>Məhsullar</LinkRouter>
+          <LinkRouter to="Məhsullar" onClick={() => setactiveBasket(false)}>
+            {t("mehsullar")}
+          </LinkRouter>
         </li>
         <li>
-          <LinkRouter to={"Şablon"} onClick ={()=>setactiveBasket(false)}>Şablon</LinkRouter>
+          <LinkRouter to="Şablon" onClick={() => setactiveBasket(false)}>
+            {t("sablon")}
+          </LinkRouter>
         </li>
-        {/* <li><Link to={"Blog"}>Blog</Link></li> */}
         <li>
-          <ScrollToSection to="HomeLogo" >
-            <span onClick ={()=>setactiveBasket(false)}>Referanslarimiz</span>
+          <LinkRouter to="blog" onClick={() => setactiveBasket(false)}>
+            {t("blog")}
+          </LinkRouter>
+        </li>
+        <li>
+          <ScrollToSection to="HomeLogo">
+            <span onClick={() => setactiveBasket(false)}>{t("referanslar")}</span>
           </ScrollToSection>
         </li>
         <li>
-          <ScrollToSection to="contact" >
-            <span onClick ={()=>setactiveBasket(false)}>Əlaqə</span>
+          <ScrollToSection to="contact">
+            <span onClick={() => setactiveBasket(false)}>{t("elaqe")}</span>
           </ScrollToSection>
         </li>
       </ul>

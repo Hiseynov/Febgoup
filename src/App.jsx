@@ -3,6 +3,7 @@ import {useLocation, useRoutes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from "./components/Header"
 import { routes } from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const ScrollToTop = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Categories from '../components/Categories';
 import { useTranslation } from 'react-i18next';
@@ -12,10 +12,23 @@ function Contact() {
     subject: '',
     message: ''
   });
-  const [statusMessageSucsess, setStatusMessageSucsess] = useState('');
-  const [statusMessageNida, setStatusMessageNida] = useState('');
-  const [statusMessageError, setStatusMessageError] = useState('');
+  const [statusMessageSucsess, setStatusMessageSucsess] = useState(false);
+  // const [statusMessageNida, setStatusMessageNida] = useState(false);
+  const [statusMessageError, setStatusMessageError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    // Устанавливаем таймер для скрытия сообщений
+    const timer = setTimeout(() => {
+      setStatusMessageSucsess(false);
+      // setStatusMessageNida(false);
+      setStatusMessageError(false);
+    }, 5000);
+
+    // Очистка таймера при обновлении состояния
+    return () => clearTimeout(timer);
+  }, [statusMessageSucsess, statusMessageError]);
 
   const handleFocusUser = () => setIsFocusedUser(true);
   const handleBlurUser = () => setIsFocusedUser(false);
@@ -32,54 +45,43 @@ function Contact() {
     }));
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Простая валидация формы
     if (!formData.user || !formData.subject || !formData.message) {
-      setStatusMessageError('Пожалуйста, заполните все поля.');
+      setStatusMessageError(t('pleaseFillAllFields')); // Убедитесь, что ключ 'pleaseFillAllFields' есть в файлах перевода
       return;
     }
-  
+
     if (isSubmitting) return; // Предотвратить повторную отправку
-  
+
     setIsSubmitting(true);
-    setStatusMessageError('');
-    setStatusMessageNida('');
-    setStatusMessageSucsess('');
-  
+    setStatusMessageError(false);
+    setStatusMessageSucsess(false);
+
     try {
       const response = await axios.post('https://test.avto-103.com/api/v2/contact/send/', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
-      console.log('Success response:', response.data);
-      setStatusMessageSucsess('Форма успешно отправлена.');
+      setStatusMessageSucsess(true); // Использование переведенного сообщения
       setFormData({ user: '', subject: '', message: '' }); // Очистка формы после успешной отправки
     } catch (error) {
-      if (error.response) {
-        console.error('Error response:', error.response.data);
-        setStatusMessageError(`Ошибка при отправке формы: ${error.response.data.detail || 'Попробуйте еще раз.'}`);
-      } else if (error.request) {
-        console.error('Error request:', error.request);
-        setStatusMessageNida('Ошибка при отправке формы. Нет ответа от сервера.');
-      } else {
-        console.error('Error message:', error.message);
-        setStatusMessageError(`Ошибка при отправке формы: ${error.message}`);
-      }
+        setStatusMessageError(true);
     }
-  
+
     setIsSubmitting(false);
   };
-  
-  const { t } = useTranslation();
+
   return (
     <>
       <div className="contact">
         <div className="elage">
           <h3 className="contact-title">{t("elagesaxlayin")}</h3>
+          {statusMessageError && <div className="alert-container"><div className="alert alert-danger" role="alert">{t('errorMessage')}</div></div>}
+          {statusMessageSucsess && <div className="alert-container"><div className="alert alert-success" role="alert">{t("succsesmesage")}</div></div>}
           <form method='post' onSubmit={handleSubmit}>
             <div className="Contactform-top">
               <div className="ContactInputItem">
@@ -130,9 +132,6 @@ function Contact() {
               <button type="submit" disabled={isSubmitting}>{isSubmitting ? t("Sending...") : t("gonder")}</button>
             </div>
           </form>
-          {statusMessageError && <div class="alert alert-danger" role="alert">{statusMessageError}</div>}
-          {statusMessageNida &&<div class="alert alert-warning" role="alert">{statusMessageNida}</div>}
-          {statusMessageSucsess && <div class="alert alert-success" role="alert">{statusMessageSucsess}</div>}
         </div>
 
         <div className="contact-wrapper">

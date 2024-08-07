@@ -755,6 +755,9 @@ body {
             row-gap: 10px;
             cursor: pointer;
             transition: 0.6s;
+            span{
+              text-align: center;
+            }
             i {
               font-size: 22px;
             }
@@ -799,6 +802,7 @@ body {
     .Sablon-view {
       display: flex;
       .SablonView-fon {
+        min-height: 300px;
         height: 100%;
         width: 100%;
         position: relative;
@@ -825,7 +829,32 @@ body {
   }
 }
 
-
+.Sablon-button{
+  margin: 20px 0;
+  .Sablon-button-container{
+    background: #282525;
+    width:90%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: .6s;
+    a{
+      display: flex;
+      justify-content: center;
+      color: white;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      width: 100%;
+      i{
+        font-size: 20px;
+      }
+    }
+    &:hover{
+      background-color: #5a4949;
+    }
+  }
+}
 #Carusel {
   box-shadow: 1px 0px 8px -3px #629c4d;
   padding-bottom: 20px;
@@ -1726,7 +1755,7 @@ body {
           width: 100%;
           border-radius: 10px 10px 0px 0;
           height: 100%;
-          object-fit: cover;
+          object-fit: fill;
           transition: .6s;
           
         }
@@ -1792,4 +1821,9 @@ body {
   h1{
     width: max-content;
   }
+}
+
+.alert-container{
+  width: 70%;
+  margin: 0 auto;
 }

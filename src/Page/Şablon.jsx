@@ -52,13 +52,15 @@ const LogoMaker = () => {
       const ctx = canvas.getContext('2d');
       const productImg = new Image();
       const designImg = new Image();
-    
+  
+      productImg.crossOrigin = 'anonymous'; // Разрешить кросс-доменные запросы
+      designImg.crossOrigin = 'anonymous'; // Разрешить кросс-доменные запросы
+  
       let imagesLoaded = 0;
   
       const checkAllImagesLoaded = () => {
         imagesLoaded++;
         if (imagesLoaded === 2) {
-          console.log(imagesLoaded,'start');
           canvas.width = productImg.width;
           canvas.height = productImg.height;
           ctx.drawImage(productImg, 0, 0);
@@ -78,19 +80,18 @@ const LogoMaker = () => {
       };
   
       productImg.src = selectedProduct;
-      console.log(productImg.onload,'true?');
       productImg.onload = checkAllImagesLoaded;
       productImg.onerror = () => console.error('Failed to load product image');
   
       designImg.src = customImage || selectedDesign;
       designImg.onload = checkAllImagesLoaded;
-      console.log(designImg.onload,'false?');
       designImg.onerror = () => console.error('Failed to load design image');
-  
     } else {
       alert('Выберите продукт или загрузите изображение для создания логотипа');
     }
   };
+  
+  
   
   // const handleDownloadPNG = () => {
   //   if (selectedDesign || customImage) {
@@ -210,6 +211,14 @@ const LogoMaker = () => {
                 {customImage || selectedDesign ? <img src={customImage || selectedDesign} alt="" /> : null}
               </div>
             </div>
+          </div>
+        </div>
+        <div className="Sablon-button">
+          <div className="Sablon-button-container">
+          <a href="https://wa.me/994552778701" target='_blank'>
+          <i className="fa fa-whatsapp"></i>
+            {t("whatsappsifaris")}
+          </a>
           </div>
         </div>
       </div>

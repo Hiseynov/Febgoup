@@ -39,6 +39,10 @@
   "mehsulkesfele": "Discover more products",
   "sifaris": "Order now",
   "katalog":"Download catalog",
-  "dahacox":"Read more"
+  "dahacox":"Read more",
+  "succsesmesage":"Your message has been successfully sent!",
+  "errorMessage": "There was an error submitting the form. Please try again later or contact support if the issue persists.",
+  "whatsappsifaris":"Order via WhatsApp"
+
   }
   

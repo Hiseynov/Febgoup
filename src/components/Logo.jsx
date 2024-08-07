@@ -1,11 +1,11 @@
 import React from 'react'
-import Logoo from "../img/Logo.png";
-function Logo() {
+import Logo from "../img/Logo.png";
+function LogoPage() {
   return (
    <>
-      <img src={Logoo}/>
+      <img src={Logo}/>
    </>
   )
 }
 
-export default Logo
+export default LogoPage

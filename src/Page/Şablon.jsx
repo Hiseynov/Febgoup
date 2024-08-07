@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import {Base_url,Api,End_url} from '../api/index'
 const LogoMaker = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedDesign, setSelectedDesign] = useState(null);
@@ -22,8 +22,8 @@ const LogoMaker = () => {
     const fetchData = async () => {
       try {
         const [designResponse, productResponse] = await Promise.all([
-          axios.get('https://test.avto-103.com/api/v2/design/'),
-          axios.get('https://test.avto-103.com/api/v2/products/')
+          axios.get(`${Base_url}${Api}${End_url}/design/`),
+          axios.get(`${Base_url}${Api}${End_url}/products/`)
         ]);
         setDizayn(designResponse.data);
         setMehsular(productResponse.data);

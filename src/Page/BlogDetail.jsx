@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-
+import {Base_url,Api,End_url} from '../api/index'
 const BlogDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -16,7 +16,7 @@ const BlogDetail = () => {
     const fetchBlogData = async () => {
       try {
         console.log(id, 'Fetching blog data');
-        const response = await axios.get(`https://test.avto-103.com/api/v2/blog/${id}/`);
+        const response = await axios.get(`${Base_url}${Api}${End_url}/blog/${id}/`);
         console.log('Blog data item:', response.data);
         setBlogDataItem(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchAllBlogs = async () => {
       try {
-        const response = await axios.get("https://test.avto-103.com/api/v2/blog/");
+        const response = await axios.get(`${Base_url}${Api}${End_url}/blog/`);
         console.log('All blogs data:', response.data);
         setBlogData(response.data);
       } catch (error) {

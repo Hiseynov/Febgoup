@@ -15,7 +15,7 @@ import Temir from "../img/Temir.jpeg";
 import cadtirmaIcon from "../img/cadtirmaIcon.png";
 import inovativIcon from "../img/inovativIcon.png";
 import TeminatIcon from "../img/TeminatIcon.png";
-
+import {Base_url,Api,End_url} from '../api/index'
 function Home() {
   const navigate = useNavigate();
   const [dataLogo, setDataLogo] = useState([]);
@@ -25,7 +25,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://test.avto-103.com/api/v2/partners/');
+        const response = await axios.get(`${Base_url}${Api}${End_url}/partners/`);
         setDataLogo(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

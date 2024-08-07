@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
-
+import {Base_url,Api,End_url} from '../api/index'
 function Blog() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -22,7 +22,7 @@ function Blog() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://test.avto-103.com/api/v2/blog/');
+        const response = await axios.get(`${Base_url}${Api}${End_url}/blog`);
         setBlogData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

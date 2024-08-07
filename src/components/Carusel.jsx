@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-
+import {Base_url,Api,End_url} from '../api/index'
 export default function App() {
   const [dataCarusel, setDataCarusel] = useState([]);
   const { t, i18n } = useTranslation();
@@ -16,7 +16,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://test.avto-103.com/api/v2/headers/');
+        const response = await axios.get(`${Base_url}${Api}${End_url}/headers/`);
         setDataCarusel(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

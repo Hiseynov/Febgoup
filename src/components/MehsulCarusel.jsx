@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import {Base_url,Api,End_url} from '../api/index'
 // Import required modules
 import { Autoplay } from "swiper/modules";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ export default function MehsulCarusel() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://test.avto-103.com/api/v2/products/');
+        const response = await axios.get(`${Base_url}${Api}${End_url}/products/`);
         setMehsuls(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

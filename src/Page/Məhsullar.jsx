@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import {Base_url,Api,End_url} from '../api/index'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -25,7 +26,7 @@ function Məhsullar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://test.avto-103.com/api/v2/products/');
+        const response = await axios.get(`${Base_url}${Api}${End_url}/products/`);
         setMehsuls(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Categories from '../components/Categories';
 import { useTranslation } from 'react-i18next';
-
+import {Base_url,Api,End_url} from '../api/index'
 function Contact() {
   const [isFocusedUser, setIsFocusedUser] = useState(false);
   const [isFocusedEmail, setIsFocusedEmail] = useState(false);
@@ -61,7 +61,7 @@ function Contact() {
     setStatusMessageSucsess(false);
 
     try {
-      const response = await axios.post('https://test.avto-103.com/api/v2/contact/send/', formData, {
+      const response = await axios.post(`${Base_url}${Api}${End_url}/contact/send/`, formData, {
         headers: {
           'Content-Type': 'application/json'
         }

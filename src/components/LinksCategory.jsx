@@ -2,7 +2,7 @@ import React from "react";
 import { Link as LinkRouter, useNavigate } from "react-router-dom";
 import { Link as LinkScroll, scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
-
+import {mehsul,sablon,blog} from '../route_static/index'
 function LinksCategory({ setactiveBasket }) {
   const ScrollToSection = ({ to, children }) => {
     const navigate = useNavigate();
@@ -37,17 +37,17 @@ function LinksCategory({ setactiveBasket }) {
           </ScrollToSection>
         </li>
         <li>
-          <LinkRouter to="Məhsullar" onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={mehsul} onClick={() => setactiveBasket(false)}>
             {t("mehsullar")}
           </LinkRouter>
         </li>
         <li>
-          <LinkRouter to="Şablon" onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={sablon} onClick={() => setactiveBasket(false)}>
             {t("sablon")}
           </LinkRouter>
         </li>
         <li>
-          <LinkRouter to="blog" onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={blog} onClick={() => setactiveBasket(false)}>
             {t("blog")}
           </LinkRouter>
         </li>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import {Base_url,Api,End_url} from '../api/index'
+import {blog} from '../route_static/index'
 function Blog() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -43,7 +44,7 @@ function Blog() {
         {blogData.map((post) => (
           <div key={post.id} className='BlogData-item'>
             {post.image1 && (
-              <Link className="BlogData-img" to={`/blog/${post.id}`}>
+              <Link className="BlogData-img" to={`/${blog}/${post.id}`}>
                 <img src={post.image1} alt={getLocalizedField(post, 'post_title')} />
               </Link>
             )}
@@ -55,7 +56,7 @@ function Blog() {
               <div className="BlogData-text">
                 <p>{truncateText(getLocalizedField(post, 'post_subtitle'), 150)}</p>
               </div>
-              <Link to={`/blog/${post.id}`} className="BlogData-button">
+              <Link to={`/${blog}/${post.id}`} className="BlogData-button">
                 <span>{t('dahacox')}</span>
               </Link>
             </div>

@@ -12,7 +12,7 @@ import { Autoplay } from "swiper/modules";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-
+import {mehsul} from '../route_static/index'
 export default function MehsulCarusel() {
   const { t, i18n } = useTranslation();
   const [mehsuls, setMehsuls] = useState([]);
@@ -70,7 +70,7 @@ export default function MehsulCarusel() {
         >
           {mehsuls.map((item) => (
             <SwiperSlide key={item.id}>
-              <Link to={'/Məhsullar'} className="MehsulCarusel-item">
+              <Link to={mehsul} className="MehsulCarusel-item">
                 <div className="MehsulCarusel-item-img">
                   <img src={item.image1} alt="Mehsul" />
                 </div>

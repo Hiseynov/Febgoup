@@ -10,7 +10,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-logo">
         <LinkRouter to={"/"}>
-              {/* <Logo></Logo> */}
+             
               <img src={LogoWhite} alt="White Logo unipage" />
             </LinkRouter>
         </div>

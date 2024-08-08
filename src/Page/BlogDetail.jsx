@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import {Base_url,Api,End_url} from '../api/index'
+import {blog} from '../route_static/index'
 const BlogDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -89,7 +90,7 @@ const BlogDetail = () => {
               <div className="BlogData-card-container">
                 {/* {post.image1 && ( */}
                 <div className="BlogData-card-img">
-                  <Link to={`/blog/${post.id}`}>
+                  <Link to={`/${blog}/${post.id}`}>
                     <img
                       src={post.image1}
                       alt={getLocalizedField(post, "post_title")}
@@ -106,7 +107,7 @@ const BlogDetail = () => {
                   <div className="BlogData-card-text">
                     <p>{truncateText(getLocalizedField(post, "post_subtitle"), 50)}</p>
                   </div>
-                  <Link to={`/blog/${post.id}`} className="BlogData-card-button">
+                  <Link to={`/${blog}/${post.id}`} className="BlogData-card-button">
                     <span>{t('dahacox')}</span>
                   </Link>
                 </div>

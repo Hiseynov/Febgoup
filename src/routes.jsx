@@ -3,7 +3,7 @@ import Məhsullar from "./Page/Məhsullar";
 import Şablon from "./Page/Şablon"
 import Blog from "./Page/Blog"
 import BlogDetail from "./Page/BlogDetail";
-
+import {mehsul,sablon,blog} from './route_static'
 
 export const routes = [
   {
@@ -11,19 +11,19 @@ export const routes = [
     element: <Home></Home>,
   },
   {
-    path: "Məhsullar",
+    path: mehsul,
     element: <Məhsullar></Məhsullar>,
   },
   {
-    path: "Şablon",
+    path: sablon,
     element: <Şablon></Şablon>
   },
   {
-    path: "blog",
+    path: blog,
     element: <Blog></Blog>
   },
   {
-    path: "blog/:id",
+    path: `${blog}/:id`,
     element: <BlogDetail />,
   }
 ]

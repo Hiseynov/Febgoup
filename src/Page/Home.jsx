@@ -16,9 +16,11 @@ import cadtirmaIcon from "../img/cadtirmaIcon.png";
 import inovativIcon from "../img/inovativIcon.png";
 import TeminatIcon from "../img/TeminatIcon.png";
 import {Base_url,Api,End_url} from '../api/index'
+import Loading from '../components/Loading';
 function Home() {
   const navigate = useNavigate();
   const [dataLogo, setDataLogo] = useState([]);
+  const [loadin,setloading] = useState(true)
   const { t } = useTranslation();
   const [slidesPerView, setSlidesPerView] = useState(window.innerWidth < 891 ? 1 : 4);
 
@@ -27,6 +29,7 @@ function Home() {
       try {
         const response = await axios.get(`${Base_url}${Api}${End_url}/partners/`);
         setDataLogo(response.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
         // navigate("/no-found"); // Uncomment if you want to handle the error with navigation
@@ -48,7 +51,9 @@ function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <>
       <Helmet>

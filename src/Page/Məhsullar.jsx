@@ -11,12 +11,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import Loading from '../components/Loading';
 function Məhsullar() {
   const { t, i18n } = useTranslation();
   const [mehsuls, setMehsuls] = useState([]);
   const [firstData, setFirstData] = useState(null);
   const navigate = useNavigate();
-
+  const [loadin,setloading] = useState(true)
   // Функция для получения локализованного поля
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
@@ -28,6 +29,7 @@ function Məhsullar() {
       try {
         const response = await axios.get(`${Base_url}${Api}${End_url}/products/`);
         setMehsuls(response.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
         // Можно добавить обработку ошибки, например, показать сообщение об ошибке или перенаправление
@@ -44,6 +46,9 @@ function Məhsullar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <>
       <Helmet>

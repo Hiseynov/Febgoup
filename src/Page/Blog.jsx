@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import {Base_url,Api,End_url} from '../api/index'
+import Loading from '../components/Loading';
 import {blog} from '../route_static/index'
 function Blog() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [blogData, setBlogData] = useState([]);
-
+  const [loadin,setloading] = useState(true)
   // Функция для обрезки текста
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
@@ -25,8 +26,10 @@ function Blog() {
       try {
         const response = await axios.get(`${Base_url}${Api}${End_url}/blog`);
         setBlogData(response.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
+        // setloading(false)
         // Обработка ошибки, например, редирект на страницу ошибки
         // navigate("/no-found");
       }
@@ -35,6 +38,9 @@ function Blog() {
     fetchData();
   }, []); // Запуск useEffect только при изменении navigate
 
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <section id='Blog'>
       <div className="big-title">

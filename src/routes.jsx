@@ -25,5 +25,9 @@ export const routes = [
   {
     path: `${blog}/:id`,
     element: <BlogDetail />,
+  },
+  {
+    path:'*',
+    element:<Home></Home>
   }
 ]

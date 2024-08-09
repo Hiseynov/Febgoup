@@ -13,12 +13,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import {mehsul} from '../route_static/index'
+import Loading from "./Loading";
 export default function MehsulCarusel() {
   const { t, i18n } = useTranslation();
   const [mehsuls, setMehsuls] = useState([]);
   const [slidesPerView, setSlidesPerView] = useState(window.innerWidth < 800 ? 1 : 3);
   const navigate = useNavigate();
-
+  const [loadin,setloading] = useState(true)
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
   };
@@ -29,6 +30,7 @@ export default function MehsulCarusel() {
       try {
         const response = await axios.get(`${Base_url}${Api}${End_url}/products/`);
         setMehsuls(response.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
         // navigate("/no-found"); // Uncomment if you want to navigate on error
@@ -51,7 +53,9 @@ export default function MehsulCarusel() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <section id="MehsulCarusel">
       <div className="MehsulCarusel-word">

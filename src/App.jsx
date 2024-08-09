@@ -22,6 +22,7 @@ function App() {
   const router = useRoutes(routes);
   return (
     <>
+
     <ScrollToTop/>
     <Header></Header>
     {router}

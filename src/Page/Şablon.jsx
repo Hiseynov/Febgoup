@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {Base_url,Api,End_url} from '../api/index'
+import Loading from '../components/Loading';
 const LogoMaker = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedDesign, setSelectedDesign] = useState(null);
@@ -13,7 +14,7 @@ const LogoMaker = () => {
   const [Mehsular, setMehsular] = useState([]);
   const { i18n } = useTranslation();
   const navigate = useNavigate();
-
+  const [loadin,setloading] = useState(true)
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
   };
@@ -27,6 +28,7 @@ const LogoMaker = () => {
         ]);
         setDizayn(designResponse.data);
         setMehsular(productResponse.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
         // navigate("/no-found");
@@ -137,7 +139,9 @@ const LogoMaker = () => {
   // };
   
   const { t } = useTranslation();
-
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <>
       <Helmet>

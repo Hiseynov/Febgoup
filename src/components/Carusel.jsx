@@ -9,15 +9,17 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import {Base_url,Api,End_url} from '../api/index'
+import Loading from "./Loading";
 export default function App() {
   const [dataCarusel, setDataCarusel] = useState([]);
   const { t, i18n } = useTranslation();
-
+  const [loadin,setloading] = useState(true)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${Base_url}${Api}${End_url}/headers/`);
         setDataCarusel(response.data);
+        setloading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
         // Uncomment this line if you want to handle navigation on error
@@ -31,7 +33,9 @@ export default function App() {
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
   };
-
+  if(loadin){
+    return <Loading></Loading>
+  }
   return (
     <section id="Carusel">
       <div className="Carusel">

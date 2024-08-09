@@ -4,11 +4,12 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import {Base_url,Api,End_url} from '../api/index'
 import {blog} from '../route_static/index'
+import Loading from "../components/Loading";
 const BlogDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { i18n, t } = useTranslation();
-
+  const [loadin,setloading] = useState(true)
   const [blogDataItem, setBlogDataItem] = useState(null);
   const [blogData, setBlogData] = useState([]);
 
@@ -16,7 +17,6 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        console.log(id, 'Fetching blog data');
         const response = await axios.get(`${Base_url}${Api}${End_url}/blog/${id}/`);
         console.log('Blog data item:', response.data);
         setBlogDataItem(response.data);
@@ -37,6 +37,7 @@ const BlogDetail = () => {
         const response = await axios.get(`${Base_url}${Api}${End_url}/blog/`);
         console.log('All blogs data:', response.data);
         setBlogData(response.data);
+        setloading(false)
       } catch (error) {
         console.error("Error fetching all blogs:", error);
         // Optionally handle the error silently
@@ -54,8 +55,8 @@ const BlogDetail = () => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
   };
 
-  if (!blogDataItem) {
-    return <p>Loading...</p>; // Display a loading message while data is being fetched
+  if(loadin){
+    return <Loading></Loading>
   }
 
   return (

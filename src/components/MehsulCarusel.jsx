@@ -32,7 +32,8 @@ export default function MehsulCarusel() {
         setMehsuls(response.data);
         setloading(false)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
+        setloading(false)
         // navigate("/no-found"); // Uncomment if you want to navigate on error
       }
     };

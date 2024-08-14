@@ -28,8 +28,8 @@ function Blog() {
         setBlogData(response.data);
         setloading(false)
       } catch (error) {
-        console.error('Error fetching data:', error);
-        // setloading(false)
+        // console.error('Error fetching data:', error);
+        setloading(false)
         // Обработка ошибки, например, редирект на страницу ошибки
         // navigate("/no-found");
       }

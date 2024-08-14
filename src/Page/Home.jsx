@@ -31,7 +31,8 @@ function Home() {
         setDataLogo(response.data);
         setloading(false)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
+        setloading(false)
         // navigate("/no-found"); // Uncomment if you want to handle the error with navigation
       }
     };

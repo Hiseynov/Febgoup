@@ -21,7 +21,8 @@ export default function App() {
         setDataCarusel(response.data);
         setloading(false)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
+        setloading(false)
         // Uncomment this line if you want to handle navigation on error
         // navigate("/no-found");
       }

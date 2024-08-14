@@ -29,8 +29,10 @@ const LogoMaker = () => {
         setDizayn(designResponse.data);
         setMehsular(productResponse.data);
         setloading(false)
+
       } catch (error) {
-        console.error('Error fetching data:', error);
+        setloading(false)
+        // console.error('Error fetching data:', error);
         // navigate("/no-found");
       }
     };

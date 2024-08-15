@@ -31,7 +31,7 @@ function Məhsullar() {
         setMehsuls(response.data);
         setloading(false)
       } catch (error) {
-        // console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error);
         setloading(false)
         // Можно добавить обработку ошибки, например, показать сообщение об ошибке или перенаправление
         // navigate("/no-found");

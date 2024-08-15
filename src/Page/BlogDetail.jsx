@@ -39,7 +39,7 @@ const BlogDetail = () => {
         setBlogData(response.data);
         setloading(false)
       } catch (error) {
-        // console.error("Error fetching all blogs:", error);
+        console.error("Error fetching all blogs:", error);
         setloading(false)
         // Optionally handle the error silently
       }

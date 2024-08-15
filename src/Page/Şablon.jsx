@@ -32,7 +32,7 @@ const LogoMaker = () => {
 
       } catch (error) {
         setloading(false)
-        // console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error);
         // navigate("/no-found");
       }
     };

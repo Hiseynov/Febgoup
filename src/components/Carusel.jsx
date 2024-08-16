@@ -10,6 +10,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import {Base_url,Api,End_url} from '../api/index'
 import Loading from "./Loading";
+import {replaceTextFormated} from '../functions/replaceTextFormated'
 export default function App() {
   const [dataCarusel, setDataCarusel] = useState([]);
   const { t, i18n } = useTranslation();
@@ -68,8 +69,8 @@ export default function App() {
                        
                       }}>
                          <div className="Carusel-container-word">
-                    <h3>{getLocalizedField(item, 'header_title')}</h3>
-                    <p>{getLocalizedField(item, 'header_text')}</p>
+                    <h3  dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(item, 'header_title'))}}/>
+                    <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(item, 'header_text'))}}/>
                     {item.link && (
                       <a target='_blank' rel='noopener noreferrer' href={item.link} download>{t('katalog')}</a>
                     )}
@@ -86,3 +87,5 @@ export default function App() {
     </section>
   );
 }
+
+// dangerouslySetInnerHTML={{ __html:}}

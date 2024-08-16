@@ -131,6 +131,8 @@ import axios from "axios";
 import { Base_url, Api, End_url } from '../api/index';
 import { blog } from '../route_static/index';
 import Loading from "../components/Loading";
+import { truncateText } from '../functions/truncateTexts';
+import { replaceTextFormated } from '../functions/replaceTextFormated';
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -178,17 +180,15 @@ const BlogDetail = () => {
 
     fetchAllBlogs();
   }, []);
+
   const getFullImageUrl = (relativePath) => {
     return `${Base_url}${Api}${relativePath}`;
   };
-   // Filter blogData to exclude the current blog post and get up to 6 related blogs
-   const relatedBlogs = blogData
-   .filter((post) => post.id !== parseInt(id)) // Exclude the current blog
-   .slice(0, 7); // Limit to the first 6 blogs
 
-  const truncateText = (text, maxLength) => {
-    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
-  };
+  // Filter blogData to exclude the current blog post and get up to 6 related blogs
+  const relatedBlogs = blogData
+    .filter((post) => post.id !== parseInt(id)) // Exclude the current blog
+    .slice(0, 7); // Limit to the first 6 blogs
 
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
@@ -220,12 +220,12 @@ const BlogDetail = () => {
         </div>
         <div className="BlogDetails-word">
           <div className="BlogDetails-date">
-            <h3>{getLocalizedField(blogDataItem, "post_title")}</h3>
+            <h3 dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_title")) }} />
             <span>{blogDataItem.post_date}</span>
           </div>
           <div className="BlogDetails-text">
-            <p>{getLocalizedField(blogDataItem, "post_subtitle")}</p>
-            <p>{getLocalizedField(blogDataItem, "post_article")}</p>
+            <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_subtitle")) }} />
+            <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_article")) }} />
           </div>
         </div>
         <div className="big-title-container">
@@ -245,7 +245,7 @@ const BlogDetail = () => {
                 </div>
                 <div className="BlogData-card-word">
                   <div className="BlogData-card-date">
-                    <h3>{getLocalizedField(post, "post_title")}</h3>
+                    <h3 dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(post, "post_title")) }} />
                     <span>{post.post_date}</span>
                   </div>
                   <div className="BlogData-card-text">

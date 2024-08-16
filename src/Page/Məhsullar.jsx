@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import {Base_url,Api,End_url} from '../api/index'
+import {replaceTextFormated} from "../functions/replaceTextFormated"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -466,9 +467,9 @@ function Məhsullar() {
               </div>
               <div className="MehsulFirst-word">
                 <div className="MehsulFirst-word-text">
-                  <h3>{getLocalizedField(firstData, 'title')}</h3>
-                  <p>{getLocalizedField(firstData, 'article')}</p>
-                  <p>{getLocalizedField(firstData, 'information')}</p>
+                  <h3  dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'title')) }} />
+                  <p  dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'article')) }} />
+                  <p  dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'information')) }} />
                 </div>
                 <div className="MehsulFirs-button">
                   <button 
@@ -494,10 +495,10 @@ function Məhsullar() {
               className="MehsulItem"
             >
               <div className="MehsulItem-word">
-                <h3>{getLocalizedField(item, 'title')}</h3>
+                <h3  dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(item, 'title')) }} />
               </div>
               <div className="MehsulItem-img">
-                <img src={item.image1} alt="" />
+                <img src={item.image1} alt={getLocalizedField(item, 'title')} />
               </div>
             </div>
           ))}
@@ -508,4 +509,3 @@ function Məhsullar() {
 }
 
 export default Məhsullar;
-

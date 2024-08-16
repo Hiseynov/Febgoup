@@ -92,9 +92,9 @@ const Header = () => {
                 </li>
               </ul>
               <ul className="HeaderTop-social">
-                <li><a href=""><i className='fa-brands fa-instagram'></i></a></li>
-                <li><a href=""><i className='fa-brands fa-facebook-f'></i></a></li>
-                <li><a href=""><i className="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/febgroup.az/?igsh=ZzhuNTZrd2dhNHRr" target='_blank'><i className='fa-brands fa-instagram'></i></a></li>
+                <li><a href="https://www.linkedin.com/company/febgroupaz/" target='_blank'><i className='fa-brands fa-facebook-f'></i></a></li>
+                <li><a href="https://www.facebook.com/people/Febgroup/61559071336630/?mibextid=ZbWKwL" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a></li>
               </ul>
             </div>
           </div>
@@ -138,9 +138,9 @@ const Header = () => {
         <nav className="HeaderTopMobile">
           <div className="HeaderTopMobile-container">
             <ul>
-              <li><a href=""><i className='fa-brands fa-instagram'></i></a></li>
-              <li><a href=""><i className='fa-brands fa-facebook-f'></i></a></li>
-              <li><a href=""><i className="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.instagram.com/febgroup.az/?igsh=ZzhuNTZrd2dhNHRr" target='_blank'><i className='fa-brands fa-instagram'></i></a></li>
+                <li><a href="https://www.linkedin.com/company/febgroupaz/" target='_blank'><i className='fa-brands fa-facebook-f'></i></a></li>
+                <li><a href="https://www.facebook.com/people/Febgroup/61559071336630/?mibextid=ZbWKwL" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a></li>
             </ul>
           </div>
         </nav>

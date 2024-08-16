@@ -5,15 +5,17 @@ import { useNavigate, Link } from 'react-router-dom';
 import {Base_url,Api,End_url} from '../api/index'
 import Loading from '../components/Loading';
 import {blog} from '../route_static/index'
+import {truncateText} from '../functions/truncateTexts'
+import { replaceTextFormated } from '../functions/replaceTextFormated';
 function Blog() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [blogData, setBlogData] = useState([]);
   const [loadin,setloading] = useState(true)
-  // Функция для обрезки текста
-  const truncateText = (text, maxLength) => {
-    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
-  };
+  // // Функция для обрезки текста
+  // const truncateText = (text, maxLength) => {
+  //   return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  // };
 
   // Функция для получения локализованного поля
   const getLocalizedField = (item, field) => {
@@ -56,11 +58,11 @@ function Blog() {
             )}
             <div className="BlogData-words">
               <div className="BlogData-date">
-                <h3>{getLocalizedField(post, 'post_title')}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html:replaceTextFormated(getLocalizedField(post, 'post_title'))}} />
                 <span>{post.post_date}</span>
               </div>
               <div className="BlogData-text">
-                <p>{truncateText(getLocalizedField(post, 'post_subtitle'), 150)}</p>
+                <p dangerouslySetInnerHTML={{ __html:replaceTextFormated(truncateText(getLocalizedField(post, 'post_subtitle'), 150))}} />
               </div>
               <Link to={`/${blog}/${post.id}`} className="BlogData-button">
                 <span>{t('dahacox')}</span>

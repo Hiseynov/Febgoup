@@ -1,64 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as LinkRouter, useNavigate } from "react-router-dom";
-import { Link as LinkScroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
-import {mehsul,sablon,blog} from '../route_static/index'
-function LinksCategory({ setactiveBasket }) {
-  const ScrollToSection = ({ to, children }) => {
-    const navigate = useNavigate();
+import { mehsul, sablon, blog } from '../route_static/index';
 
-    const handleClick = () => {
-      navigate("/");
-      setTimeout(() => {
-        scroller.scrollTo(to, {
+function LinksCategory({ setActiveBasket }) {
+  const [scrollTo, setScrollTo] = useState("");
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  // Прокрутка к секции после загрузки страницы
+  useEffect(() => {
+    if (scrollTo) {
+      const timer = setTimeout(() => {
+        scroller.scrollTo(scrollTo, {
           duration: 500,
           delay: 0,
           smooth: "easeInOutQuart",
-          offset: -200,
+          offset: -100, // Регулируйте по необходимости
         });
-      }, 100); // Задержка, чтобы дать времени для перехода
+        setScrollTo(""); // Сброс состояния после прокрутки
+      }, 300); // Задержка для надежности
+      return () => clearTimeout(timer);
+    }
+  }, [scrollTo]);
+
+  const ScrollToSection = ({ to, children }) => {
+    const handleClick = (event) => {
+      event.preventDefault(); // Предотвращает стандартное действие ссылки
+      navigate("/"); // Навигация на главную страницу
+      setScrollTo(to); // Установка секции для прокрутки
     };
 
     return (
-      <a onClick={handleClick} style={{ cursor: "pointer" }}>
+      <a href="#" onClick={handleClick} style={{ cursor: "pointer" }}>
         {children}
       </a>
     );
   };
-
-  const { t } = useTranslation();
 
   return (
     <>
       <ul>
         <li>
           <ScrollToSection to="Hakimizda">
-            <span onClick={() => setactiveBasket(false)}>{t("haqqimizda")}</span>
+            <span onClick={() => setActiveBasket(false)}>{t("haqqimizda")}</span>
           </ScrollToSection>
         </li>
         <li>
-          <LinkRouter to={mehsul} onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={mehsul} onClick={() => setActiveBasket(false)}>
             {t("mehsullar")}
           </LinkRouter>
         </li>
         <li>
-          <LinkRouter to={sablon} onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={sablon} onClick={() => setActiveBasket(false)}>
             {t("sablon")}
           </LinkRouter>
         </li>
         <li>
-          <LinkRouter to={blog} onClick={() => setactiveBasket(false)}>
+          <LinkRouter to={blog} onClick={() => setActiveBasket(false)}>
             {t("blog")}
           </LinkRouter>
         </li>
         <li>
           <ScrollToSection to="HomeLogo">
-            <span onClick={() => setactiveBasket(false)}>{t("referanslar")}</span>
+            <span onClick={() => setActiveBasket(false)}>{t("referanslar")}</span>
           </ScrollToSection>
         </li>
         <li>
           <ScrollToSection to="contact">
-            <span onClick={() => setactiveBasket(false)}>{t("elaqe")}</span>
+            <span onClick={() => setActiveBasket(false)}>{t("elaqe")}</span>
           </ScrollToSection>
         </li>
       </ul>

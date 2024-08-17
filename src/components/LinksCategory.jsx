@@ -17,7 +17,7 @@ function LinksCategory({ setActiveBasket }) {
           duration: 500,
           delay: 0,
           smooth: "easeInOutQuart",
-          offset: -100, // Регулируйте по необходимости
+          offset: -150, // Регулируйте по необходимости
         });
         setScrollTo(""); // Сброс состояния после прокрутки
       }, 300); // Задержка для надежности

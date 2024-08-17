@@ -1,7 +1,7 @@
-# <IfModule mod_rewrite.c>
+<IfModule mod_rewrite.c>
 
-#   RewriteEngine On
-#   RewriteBase /
+  RewriteEngine On
+  RewriteBase /
   
   # Force HTTPS
   RewriteCond %{HTTPS} off
@@ -17,5 +17,3 @@
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
-
-

@@ -1,19 +1,19 @@
 const express = require('express');
-const path = require('path');
-var cors = require('cors')
+const cors = require('cors');
 const app = express();
 
-// Порт, который будет использоваться сервером
-const PORT = process.env.PORT || 3000;
+// Разрешите все домены или укажите конкретные домены
+app.use(cors({
+  origin: '*', // Замените '*' на ваш конкретный домен, если необходимо
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true
+}));
 
-app.use(cors())
-// Указание Express использовать папку 'dist' для статических файлов (папка, сгенерированная Vite)
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// Основной маршрут для вашего приложения
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// Настройка маршрутов и статических файлов
+app.get('/media/templates/:filename', (req, res) => {
+  res.sendFile(path.join(__dirname, 'media', req.params.filename));
 });
+
 // Запуск сервера
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

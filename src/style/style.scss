@@ -690,16 +690,14 @@ body {
       justify-content: center;
     }
     .Sablonn-down {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       padding: 20px;
       background-color: #f8f8f8;
       border: 2px dashed #ccc;
       border-radius: 10px;
-      transition: background-color 0.3s, border-color 0.3s;
       cursor: pointer;
-      position: relative;
+      p{
+        text-align: center;
+      }
       
     
       // &:hover {

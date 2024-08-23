@@ -1592,6 +1592,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     row-gap: 50px;
+    width: 100%;
     .BlogData-item{
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1660,9 +1661,9 @@ body {
         bottom: -26px;
         left: 0;
       }
-      &:nth-last-child(-n+1)::after{
+      &:nth-child(-n+1)::after {
         width: 0;
-      }
+      } 
     }
   }
 }

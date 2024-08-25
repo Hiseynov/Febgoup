@@ -1,3 +1,4 @@
+// Версия 1
 // import React, { useEffect, useState } from "react";
 // import { useNavigate, useParams, Link } from "react-router-dom";
 // import { useTranslation } from "react-i18next";
@@ -124,6 +125,8 @@
 
 // export default BlogDetail;
 
+// Версия 2
+
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -133,6 +136,7 @@ import { blog } from '../route_static/index';
 import Loading from "../components/Loading";
 import { truncateText } from '../functions/truncateTexts';
 import { replaceTextFormated } from '../functions/replaceTextFormated';
+import { Helmet } from "react-helmet";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -143,52 +147,41 @@ const BlogDetail = () => {
   const [blogData, setBlogData] = useState([]);
   const [error, setError] = useState(false);
 
-  // Fetch specific blog data
+  // Получение всех данных блогов
   useEffect(() => {
-    const fetchBlogData = async () => {
+    const fetchAllBlogs = async () => {
       try {
-        const response = await axios.get(`${Base_url}${Api}${End_url}/blog/${id}/`);
+        const response = await axios.get(`${Base_url}${Api}${End_url}/blog/`);
         if (response.data) {
-          console.log('Blog data item:', response.data);
-          setBlogDataItem(response.data);
+          console.log('Все данные блогов:', response.data);
+          setBlogData(response.data);
+
+          // Фильтрация для получения конкретного блога
+          const filteredBlogItem = response.data.find((post) => post.id === parseInt(id));
+          setBlogDataItem(filteredBlogItem || null);
           setError(false);
         } else {
           setError(true);
         }
       } catch (error) {
-        console.error("Error fetching blog data:", error);
+        console.error("Ошибка при получении данных блога:", error);
         setError(true);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchBlogData();
-  }, [id]);
-
-  // Fetch all blog data
-  useEffect(() => {
-    const fetchAllBlogs = async () => {
-      try {
-        const response = await axios.get(`${Base_url}${Api}${End_url}/blog/`);
-        console.log('All blogs data:', response.data);
-        setBlogData(response.data);
-      } catch (error) {
-        console.error("Error fetching all blogs:", error);
-      }
-    };
-
     fetchAllBlogs();
-  }, []);
+  }, [id]);
 
   const getFullImageUrl = (relativePath) => {
     return `${Base_url}${Api}${relativePath}`;
   };
 
-  // Filter blogData to exclude the current blog post and get up to 6 related blogs
+  // Фильтрация данных блогов для исключения текущего блога и получения связанных блогов
   const relatedBlogs = blogData
-    .filter((post) => post.id !== parseInt(id)) // Exclude the current blog
-    .slice(0, 7); // Limit to the first 6 blogs
+    .filter((post) => post.id !== parseInt(id)) // Исключаем текущий блог
+    .slice(0, 7); // Ограничиваем до 7 блогов
 
   const getLocalizedField = (item, field) => {
     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
@@ -196,7 +189,7 @@ const BlogDetail = () => {
 
   useEffect(() => {
     if (error) {
-      navigate("/"); // Redirect to home page on error
+      navigate("/"); // Перенаправление на домашнюю страницу в случае ошибки
     }
   }, [error, navigate]);
 
@@ -205,16 +198,27 @@ const BlogDetail = () => {
   }
 
   if (!blogDataItem) {
-    return null; // Render nothing while redirecting
+    return null; // Не отображаем ничего, если конкретный блог не найден
   }
 
   return (
-    <section id="BlogDetails">
+    <>
+       <Helmet>
+        <title>{t("blog_title")}</title>
+        <meta name="description" content={t("title_1mehsul")} />
+        <meta property="og:title" content={t("blog_title")}/>
+        <meta property="og:description" content={t("title_1mehsul")}/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={t("blog_title")}/>
+        <meta name="twitter:description" content={t("title_1mehsul")}/>
+      </Helmet>
+      <section id="BlogDetails">
       <h1 className="big-title">{t("bloglarimiz")}</h1>
       <div className="BlogDetails">
         <div className="BlogDetails-img">
           <img
-            src={getFullImageUrl(blogDataItem.image1)}
+            src={blogDataItem.image1}
             alt={getLocalizedField(blogDataItem, "post_title")}
           />
         </div>
@@ -224,8 +228,10 @@ const BlogDetail = () => {
             <span>{blogDataItem.post_date}</span>
           </div>
           <div className="BlogDetails-text">
-            <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_subtitle")) }} />
-            <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_article")) }} />
+            {blogDataItem.post_subtitle_az &&  <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_subtitle")) }} />}
+
+           {blogDataItem.post_article_az &&  <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(blogDataItem, "post_article")) }} />}
+           
           </div>
         </div>
         <div className="big-title-container">
@@ -249,7 +255,8 @@ const BlogDetail = () => {
                     <span>{post.post_date}</span>
                   </div>
                   <div className="BlogData-card-text">
-                    <p>{truncateText(getLocalizedField(post, "post_subtitle"), 50)}</p>
+                    {post.post_subtitle_az && <p>{truncateText(getLocalizedField(post, "post_subtitle"), 50)}</p>}
+                    
                   </div>
                   <Link to={`/${blog}/${post.id}`} className="BlogData-card-button">
                     <span>{t('dahacox')}</span>
@@ -261,6 +268,8 @@ const BlogDetail = () => {
         </div>
       </div>
     </section>
+    </>
+  
   );
 };
 

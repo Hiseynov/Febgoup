@@ -3,7 +3,7 @@
   "mehsullar": "Məhsullar",
   "sablon": "Şablon",
   "blog": "Blog",
-  "referanslar": "Referanslarımız",
+  "referanslar": "Referanslar",
   "elaqe": "Əlaqə",
   "mehsullarimiz": "Məhsullarimiz",
   "niyebiz": "Niyə Biz",
@@ -17,7 +17,7 @@
   "info_4": "Diqqətli personal tərəfindən təhlükəsiz, vaxtında çatdırılma.",
 
   "fabrikHakimizda": "Fabrikimiz haqqında",
-  "fabrikaInfo": "Fabrikimizin xüsusi komandaya və ən müasir avadanlıqlara malik dinamik şirkətdir. Biz geniş çeşiddə karton və qablaşdırma məhsullarının istehsalında ixtisaslaşmışıq. Qısa müddət ərzində biz müştərilərimiz arasında əla reputasiya qazandıq. İstehsal prosesinin hər mərhələsində dürüstlük və keyfiyyətə sadiqliyimiz güclü imic və reputasiyamızı qoruyub saxlamağımızı təmin edir. ",
+  "fabrikaInfo": "2016-ci ildən fealiyyət göstərən Febgroup, öz fəaliyyet sektorunda ən son texnologiyalalarla inkişaf etdirdiyi iş modeli ile daim müştərilərin ilk seçimi olmuşdur. Satiş və satişdan sonra xidmət, daimi əlagələr, partyorlarimiza xüsusi diggətlə biznes əməkdaşliqlarimiz daim inkişaf etmiş, ölkenin ən böyük restoran və otelləri ilə uzunmüddətli əmakdaşliga yol açmişdir. Daimi inkişaf edən komanda, fəaliyyət istigamətimizi dəstəklayən yeni texnologiyalar və yeni mehsullarla əmekdaşliq etdiyimiz tərəfdaşlara daima xidmətdən memnunluq duyuruq.",
   "elagesaxlayin": "Bizimlə əlaqə saxlayın",
   "adcontact": "Mövzu ...",
   "emailcontact": "E-poçt ...",
@@ -33,10 +33,8 @@
   "bloglarimiz": "Bloglarımız",
   "oxsar": "Oxşar",
   "etrafli": "Daha Ətraflı..",
-  "logo_1mehsul": "Neytral məhsullar",
-  "title_1mehsul": "Bizim geniş çeşidli promosyon məhsullarımız sizə kiçik qəlyanaltılar, şəkər paketləri, əl dezinfeksiya edən salfetlər və daha çox kimi neytral məhsullar təklif edir ki, biz onları loqotipiniz çap edilmədən sizə təqdim edirik. Hazır və maraqlı dizaynlar arasından seçim etmək və ya tamamilə çap olunmamış versiyanı seçmək seçiminiz var.",
-  "logo_2mehsul": "Giveaway məhsulları həmişə yaxşı qəbul edilir!",
-  "title_2mehsul": "Bu cür reklam olmadan belə, kiçik hədiyyələr və praktik hədiyyələr biznesiniz, iaşə müəssisəniz və ya buna bənzər şeylər üçün ideal hədiyyələrdir - və eyni zamanda həqiqətən də gözəl görünürlər! Zövqünüzə uyğun olaraq müxtəlif dizaynlarda və müxtəlif, hazır motivli çaplarla fərdi çap edilmiş reklam materiallarına ucuz və tez çatdırılan alternativlər təklif edirik. İndi seçin və onlayn sifariş edin!",
+  "title_1mehsul": "Müştərilərimiz istədikləri ölçüyə uyğun və seçdikləri dizaynda öz loqolarını əlavə edib sifariş verə bilərlər. Sifariş və sifarişdən sonrakı proseslərdə Febgroup komandası daim müştəriyə dəstək olur. Sifariş və çatdırılma xidmətlərimiz gün ərzində aktivdir və dəstəyə hazırdır.",
+
   "mehsulkesfele": "Daha çox məhsul kəşf edin",
   "sifaris": "Sifaris et",
   "katalog":"Katalog yüklə",
@@ -44,7 +42,14 @@
   "succsesmesage":"Mesajınız uğurla göndərildi!",
   "errorMessage": "Forma göndərilməsində xəta baş verdi. Xahiş edirik, daha sonra yenidən cəhd edin və ya problem davam edərsə, dəstək ilə əlaqə saxlayın.",
   "whatsappsifaris":"WhatsApp ilə sifariş et",
-  "SablonMessages": "Seçilmiş məhsul üçün mövcud dizayn yoxdur."
+  "SablonMessages": "Seçilmiş məhsul üçün mövcud dizayn yoxdur.",
+  "blog_title":"Febgroup Blog: Loqo Dizaynı, Sifariş Xidmətləri və Müştəri Dəstəyi ilə İlgili Yaradıcı Məsləhətlər",
+  "mehsul_title":"Febgroup Məhsulları: Öz Loqonuzu Seçin və İstədiyiniz Dizaynda Yüksək Keyfiyyətli Sifarişlər Verin",
+  "home_title":"Febgroup ilə Öz Dizaynınızda Loqolu Məhsullar – 24/7 Müştəri Dəstəyi və Aktiv Sifariş Xidməti",
+    "nameContact": "Adınızı daxil edin ...",
+    "phoneContact": "Telefon nömrənizi daxil edin ...",
+    "invalidPhoneNumber": "Telefon nömrəsi düzgün deyil",
+    "isnumbers":"+994 ilə başlamalıdır və 9 rəqəm olmalıdır"
 
   
 }

@@ -4,7 +4,7 @@ import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { mehsul, sablon, blog } from '../route_static/index';
 
-function LinksCategory({ setActiveBasket }) {
+function LinksCategory() {
   const [scrollTo, setScrollTo] = useState("");
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -14,10 +14,10 @@ function LinksCategory({ setActiveBasket }) {
     if (scrollTo) {
       const timer = setTimeout(() => {
         scroller.scrollTo(scrollTo, {
-          duration: 500,
+          duration: 800, // Увеличиваем время для более плавного эффекта
           delay: 0,
           smooth: "easeInOutQuart",
-          offset: -150, // Регулируйте по необходимости
+          offset: -150, // Подстройте значение по необходимости
         });
         setScrollTo(""); // Сброс состояния после прокрутки
       }, 300); // Задержка для надежности
@@ -52,11 +52,11 @@ function LinksCategory({ setActiveBasket }) {
             {t("mehsullar")}
           </LinkRouter>
         </li>
-        <li>
+        {/* <li>
           <LinkRouter to={sablon} onClick={() => setActiveBasket(false)}>
             {t("sablon")}
           </LinkRouter>
-        </li>
+        </li> */}
         <li>
           <LinkRouter to={blog} onClick={() => setActiveBasket(false)}>
             {t("blog")}

@@ -1,20 +1,21 @@
+// Импорт необходимых модулей
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); // Импортируем cors
 const app = express();
+const port = 5000; // Укажите порт вашего сервера
 
-// Разрешите все домены или укажите конкретные домены
+// Используем cors middleware
 app.use(cors({
-  origin: '*', // Замените '*' на ваш конкретный домен, если необходимо
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true
+  origin: '*', // Разрешаем запросы с любого источника
+  methods: ['GET', 'POST'], // Разрешаем только GET и POST запросы
 }));
 
-// Настройка маршрутов и статических файлов
-app.get('/media/templates/:filename', (req, res) => {
-  res.sendFile(path.join(__dirname, 'media', req.params.filename));
+// Пример маршрута
+app.get('/api/endpoint', (req, res) => {
+  res.send('Hello from server!');
 });
 
 // Запуск сервера
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });

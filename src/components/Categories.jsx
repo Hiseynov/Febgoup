@@ -17,7 +17,7 @@ function categories() {
           <i className="fa-regular fa-envelope"></i>
             <div className="contact-about">
               <h5>{t("email")}</h5>
-              <a href="mailTo:info@febgroup.az">info@febgroup.az</a>
+              <a href="mailTo:office@febgroup.az">office@febgroup.az</a>
             </div>
           </div>
           <div className="contact-item">
@@ -31,7 +31,7 @@ function categories() {
           <i className="fa-solid fa-location-dot"></i>
             <div className="contact-about">
               <h5>{t("unvan")}</h5>
-              <a href="tel:+9940000000">Baki Sheheri, D.Bunyadzade k. 27</a>
+              <a>Energetika küg. 3 Kegle qes, Baki</a>
             </div>
           </div>
 

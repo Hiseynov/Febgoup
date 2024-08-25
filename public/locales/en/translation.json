@@ -16,7 +16,7 @@
     "ad_4": "Reliable Delivery",
     "info_4": "Safe, timely delivery by attentive staff.",
   "fabrikHakimizda": "About Our Factory",
-  "fabrikaInfo": "Our factory is a dynamic company with a dedicated team and state-of-the-art equipment. We specialize in the production of a wide range of cardboard and packaging products. In a short time, we have gained an excellent reputation among our customers. Our commitment to honesty and quality at every stage of the production process ensures that we maintain a strong image and reputation.",
+  "fabrikaInfo": "Since 2016, Febgroup has been a top choice for customers due to its business model developed with the latest technologies in its sector. Sales and after-sales service, constant communication, and special attention to our partners have continuously improved our business relationships, leading to long-term collaborations with the country’s largest restaurants and hotels. Our ever-evolving team is committed to providing satisfaction to our partners through the use of new technologies and products that support our business direction.",
   "elagesaxlayin": "Contact Us",
     "adcontact": "Subject ...",
     "emailcontact": "Email ...",
@@ -32,10 +32,9 @@
   "bloglarimiz": "Our Blogs",
   "oxsar":"Similar",
   "etrafli":"More details..",
-    "logo_1mehsul": "Neutral Products",
-    "title_1mehsul": "Our wide range of promotional products offers you neutral items such as small snacks, sugar packets, hand sanitizing wipes, and more, which we provide without your logo printed on them. You have the option to choose from ready-made and interesting designs or opt for completely unprinted versions.",
-    "logo_2mehsul": "Giveaway products are always well received!",
-    "title_2mehsul": "Even without such advertising, small gifts and practical giveaways are ideal gifts for your business, catering establishment, or similar - and they also look really nice! We offer inexpensive and quickly delivered alternatives to individually printed advertising materials in various designs and with different ready-made motifs. Choose now and order online!",
+   
+    "title_1mehsul": "Our clients can place orders with their desired measurements and selected designs, adding their own logos. The Febgroup team always provides support to customers throughout the ordering and subsequent processes. Our ordering and delivery services are active throughout the day and ready to assist.",
+ 
   "mehsulkesfele": "Discover more products",
   "sifaris": "Order now",
   "katalog":"Download catalog",
@@ -43,7 +42,14 @@
   "succsesmesage":"Your message has been successfully sent!",
   "errorMessage": "There was an error submitting the form. Please try again later or contact support if the issue persists.",
   "whatsappsifaris":"Order via WhatsApp",
-  "SablonMessages": "No design available for the selected product."
+  "SablonMessages": "No design available for the selected product.",
+  "blog_title":"Febgroup Blog: Creative Tips on Logo Design, Order Services, and Customer Support",
+  "mehsul_title":"Febgroup Məhsulları: Öz Loqonuzu Seçin və İstədiyiniz Dizaynda Yüksək Keyfiyyətli Sifarişlər Verin",
+  "home_title":"Custom Logo Products with Your Design from Febgroup – 24/7 Support and Active Order Service",
+  "nameContact": "Enter your name ...",
+  "phoneContact": "Enter your phone number ...",
+  "invalidPhoneNumber": "Invalid phone number",
+  "isnumbers":"The phone number must start with +994 and contain 9 digits."
 
   }
   

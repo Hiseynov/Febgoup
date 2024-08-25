@@ -57,15 +57,15 @@ function Home() {
   }
   return (
     <>
-      <Helmet>
-        <title>'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!</title>
-        <meta name="description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir." />
-        <meta property="og:title" content="'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!"/>
-        <meta property="og:description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir."/>
+        <Helmet>
+        <title>{t("home_title")}</title>
+        <meta name="description" content={t("title_1mehsul")} />
+        <meta property="og:title" content={t("home_title")}/>
+        <meta property="og:description" content={t("title_1mehsul")}/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="'Feb Group' - Paketləmə innovasiyaları: Bizimlə asan və keyfiyyətli!"/>
-        <meta name="twitter:description" content="'Feb Group' - Fabrikamız dinamik şirkətdir, karton və qablaşdırma məhsullarında uzmanlaşır və yüksək keyfiyyət təmin edir."/>
+        <meta name="twitter:title" content={t("home_title")}/>
+        <meta name="twitter:description" content={t("title_1mehsul")}/>
       </Helmet>
       <Carusel />
       <MehsulCarusel />

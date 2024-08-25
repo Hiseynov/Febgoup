@@ -7,9 +7,9 @@
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
-  RewriteCond %{HTTP_HOST} ^unipack\.az [NC,OR]
-  RewriteCond %{HTTP_HOST} ^www\.unipack\.az [NC]
-  RewriteRule ^(.*)$ https://febgroup.az//$1 [L,R=301]
+  # RewriteCond %{HTTP_HOST} ^unipack\.az [NC,OR]
+  # RewriteCond %{HTTP_HOST} ^www\.unipack\.az [NC]
+  # RewriteRule ^(.*)$ https://febgroup.az//$1 [L,R=301]
 
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f

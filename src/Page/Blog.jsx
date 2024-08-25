@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import {blog} from '../route_static/index'
 import {truncateText} from '../functions/truncateTexts'
 import { replaceTextFormated } from '../functions/replaceTextFormated';
+import { Helmet } from 'react-helmet';
 function Blog() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -44,7 +45,18 @@ function Blog() {
     return <Loading></Loading>
   }
   return (
-    <section id='Blog'>
+    <>
+          <Helmet>
+        <title>{t("blog_title")}</title>
+        <meta name="description" content={t("title_1mehsul")} />
+        <meta property="og:title" content={t("blog_title")}/>
+        <meta property="og:description" content={t("title_1mehsul")}/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={t("blog_title")}/>
+        <meta name="twitter:description" content={t("title_1mehsul")}/>
+      </Helmet>
+        <section id='Blog'>
       <div className="big-title">
         <h1>{t("bloglarimiz")}</h1>
       </div>
@@ -72,6 +84,8 @@ function Blog() {
         ))}
       </div>
     </section>
+    </>
+
   );
 }
 

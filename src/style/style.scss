@@ -455,6 +455,11 @@ body {
           }
         }
       }
+      .swiper-button-prev,
+.swiper-button-next {
+  display: block;
+  color: #000;
+}
     }
   }
 }

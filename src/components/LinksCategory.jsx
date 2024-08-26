@@ -14,7 +14,7 @@ function LinksCategory() {
     if (scrollTo) {
       const timer = setTimeout(() => {
         scroller.scrollTo(scrollTo, {
-          duration: 800, // Увеличиваем время для более плавного эффекта
+          duration: 100, // Увеличиваем время для более плавного эффекта
           delay: 0,
           smooth: "easeInOutQuart",
           offset: -150, // Подстройте значение по необходимости

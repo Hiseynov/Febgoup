@@ -3,7 +3,9 @@ import React from 'react'
 import LogoWhite from "../img/LogoWhite.png";
 import { Link as LinkRouter } from "react-router-dom";
 import LinksCategory from './LinksCategory';
+import { useTranslation } from 'react-i18next';
 function Footer() {
+  const { t } = useTranslation();
   return (
    <>
     <footer className='footer'>
@@ -29,6 +31,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      <div className="developertTeam"><p>{t("Footer_digigo")}</p></div>
     </footer>
    
    </>

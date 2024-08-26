@@ -49,7 +49,8 @@
     "nameContact": "Adınızı daxil edin ...",
     "phoneContact": "Telefon nömrənizi daxil edin ...",
     "invalidPhoneNumber": "Telefon nömrəsi düzgün deyil",
-    "isnumbers":"+994 ilə başlamalıdır və 9 rəqəm olmalıdır"
+    "isnumbers":"+994 ilə başlamalıdır və 9 rəqəm olmalıdır",
+    "Footer_digigo":"Bu sayt Digigo Group tərəfindən hazırlanmişdir. 2024-ci il, bütün hüquqlar qorunur "
 
   
 }

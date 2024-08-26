@@ -153,31 +153,31 @@
 //   const getLocalizedField = (item, field) => {
 //     return item[`${field}_${i18n.language}`] || item[`${field}_az`];
 //   };
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const [designResponse, productResponse] = await Promise.all([
-  //         axios.get(`${Base_url}${Api}${End_url}/design/`),
-  //         axios.get(`${Base_url}${Api}${End_url}/design/categories/`)
-  //       ]);
-  //       setDizayn(designResponse.data);
-  //       setMehsular(productResponse.data);
-  //       setloading(false);
-  //     } catch (error) {
-  //       setloading(false);
-  //       console.error('Error fetching data:', error);
-  //       // navigate("/no-found");
-  //     }
-  //   };
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const [designResponse, productResponse] = await Promise.all([
+//           axios.get(`${Base_url}${Api}${End_url}/design/`),
+//           axios.get(`${Base_url}${Api}${End_url}/design/categories/`)
+//         ]);
+//         setDizayn(designResponse.data);
+//         setMehsular(productResponse.data);
+//         setloading(false);
+//       } catch (error) {
+//         setloading(false);
+//         console.error('Error fetching data:', error);
+//         // navigate("/no-found");
+//       }
+//     };
 
-  //   fetchData();
-  // }, [navigate]);
+//     fetchData();
+//   }, [navigate]);
 
-  // useEffect(() => {
-  //   // Фильтрация Dizayn на основе filterdesingId
-  //   const filteredData = Dizayn.filter(item => item.product_category === filterdesingId);
-  //   setDizaynData(filteredData);
-  // }, [filterdesingId, Dizayn]); // Убедитесь, что Dizayn также добавлен в зависимости
+//   useEffect(() => {
+//     // Фильтрация Dizayn на основе filterdesingId
+//     const filteredData = Dizayn.filter(item => item.product_category === filterdesingId);
+//     setDizaynData(filteredData);
+//   }, [filterdesingId, Dizayn]); // Убедитесь, что Dizayn также добавлен в зависимости
 //   const handleFileChange = (event) => {
 //     const file = event.target.files[0];
 //     if (file) {
@@ -380,7 +380,10 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import Loading from '../components/Loading';
 import { useNavigate } from 'react-router-dom';
-import {Base_url,Api,End_url} from '../api/index'
+import { Base_url, Api, End_url } from '../api/index';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
 const LogoMaker = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedDesign, setSelectedDesign] = useState(null);
@@ -419,6 +422,7 @@ const LogoMaker = () => {
     const filteredData = Dizayn.filter(item => item.product_category === filterdesingId);
     setDizaynData(filteredData);
   }, [filterdesingId, Dizayn]); // Убедитесь, что Dizayn также добавлен в зависимости
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -430,54 +434,50 @@ const LogoMaker = () => {
     }
   };
 
-  const handleSendToWhatsApp = () => {
-    console.log('Функция handleSendToWhatsApp вызвана');
+  const handleCreatePDF = () => {
     if (selectedProduct && (customImage || selectedDesign)) {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const productImg = new Image();
       const designImg = new Image();
-  
-      productImg.crossOrigin = 'anonymous'; // Попробуйте это, если сервер поддерживает CORS
-      designImg.crossOrigin = 'anonymous';
-  
+
+      productImg.crossOrigin = 'anonymous'; // Пытаемся обойти CORS
+
       let imagesLoaded = 0;
-  
+
       const checkAllImagesLoaded = () => {
         imagesLoaded++;
         if (imagesLoaded === 2) {
           canvas.width = productImg.width;
           canvas.height = productImg.height;
           ctx.drawImage(productImg, 0, 0);
-  
+
           const designScale = 0.5;
           const designWidth = designImg.width * designScale;
           const designHeight = designImg.height * designScale;
           const x = (canvas.width - designWidth) / 2;
           const y = (canvas.height - designHeight) / 2;
           ctx.drawImage(designImg, x, y, designWidth, designHeight);
-  
+
           canvas.toBlob(blob => {
-            const formData = new FormData();
-            formData.append('file', blob, 'logo.png');
-  
-            axios.post('/api/upload', formData)
-              .then(response => {
-                const imageUrl = response.data.url;
-                const whatsappLink = `https://wa.me/994506041905?text=${encodeURIComponent(imageUrl)}`;
-                window.open(whatsappLink, '_blank');
-              })
-              .catch(error => {
-                console.error('Ошибка при загрузке изображения:', error);
-              });
+            const doc = new jsPDF();
+
+            // Добавляем логотип
+            const url = URL.createObjectURL(blob);
+            const img = new Image();
+            img.onload = () => {
+              doc.addImage(img, 'PNG', 10, 10, 190, 150);
+              doc.save('logo.pdf');
+            };
+            img.src = url;
           }, 'image/png');
         }
       };
-  
+
       productImg.src = selectedProduct;
       productImg.onload = checkAllImagesLoaded;
       productImg.onerror = () => console.error('Не удалось загрузить изображение продукта');
-  
+
       designImg.src = customImage || selectedDesign;
       designImg.onload = checkAllImagesLoaded;
       designImg.onerror = () => console.error('Не удалось загрузить изображение дизайна');
@@ -485,8 +485,6 @@ const LogoMaker = () => {
       alert('Выберите продукт или загрузите изображение для создания логотипа');
     }
   };
-  
-  
 
   const { t } = useTranslation();
 
@@ -553,10 +551,9 @@ const LogoMaker = () => {
           </div>
         </div>
         <div className="Sablon-button">
-        <button onClick={handleSendToWhatsApp}>
-  <i className="fa fa-whatsapp"></i> {t("Order in WhatsApp")}
-</button>
-
+          <button onClick={handleCreatePDF}>
+            <i className="fa fa-file-pdf"></i> {t("Create PDF")}
+          </button>
         </div>
       </div>
     </>

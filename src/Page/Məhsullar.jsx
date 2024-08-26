@@ -317,8 +317,18 @@ function Məhsullar() {
               <div className="MehsulFirst-word">
                 <div className="MehsulFirst-word-text">
                   <h3 dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'title')) }} />
-                  <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'article')) }} />
-                  <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'information')) }} />
+                  {
+                    firstData.article_az && (
+                      <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'article')) }} />
+
+                    )
+                  }
+                  {
+                    firstData.information_az && (
+                      <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(firstData, 'information')) }} />
+
+                    )
+                  }
                 </div>
                 <div className="MehsulFirs-button">
                   <button

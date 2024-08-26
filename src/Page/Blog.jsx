@@ -178,9 +178,14 @@ function Blog() {
                   <h3 dangerouslySetInnerHTML={{ __html: replaceTextFormated(getLocalizedField(post, 'post_title')) }} />
                   <span>{post.post_date}</span>
                 </div>
-                <div className="BlogData-text">
+                {
+                  post.post_subtitle_az && (
+                     <div className="BlogData-text">
                   <p dangerouslySetInnerHTML={{ __html: replaceTextFormated(truncateText(getLocalizedField(post, 'post_subtitle'), 150)) }} />
                 </div>
+                  )
+                }
+               
                 <Link to={`/${blog}/${post.id}`} className="BlogData-button">
                   <span>{t('dahacox')}</span>
                 </Link>
